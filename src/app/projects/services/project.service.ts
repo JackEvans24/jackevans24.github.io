@@ -9,9 +9,10 @@ import { dropball } from '../data/dropball';
 import { fileChange } from '../data/file-change';
 import { metroidvaniaTest } from '../data/metroidvania-test';
 import { mobieBrawl } from '../data/mobie-brawl';
+import { pinkGuy } from '../data/pink-guy';
 import { randomTvShow } from '../data/random-tv-show';
 
-const apps: IProject[] = [ metroidvaniaTest, fileChange, randomTvShow, dropball, mobieBrawl, cubeGame, diceSimulator ];
+const apps: IProject[] = [ metroidvaniaTest, fileChange, randomTvShow, dropball, mobieBrawl, pinkGuy, cubeGame, diceSimulator ];
 
 @Injectable({
     providedIn: 'root'
