@@ -1,0 +1,7 @@
+@import 'material.scss';
+
+mat-card {
+    background: mat-color($md-main-palette, 50);
+    margin: auto;
+    max-width: 50rem;
+}

@@ -1,0 +1,13 @@
+div.previews {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+
+    app-project-preview {
+        max-width: 30%;
+        min-width: 20rem;
+        padding: 0.5rem;
+    }
+}
