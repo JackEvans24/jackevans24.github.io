@@ -18,11 +18,11 @@ export class ProjectPreviewComponent {
     constructor(private dialog: MatDialog) {}
 
     openProjectVideo(): void {
-        if (!this.project.videoUrl) {
+        if (!this.project.youtubeId) {
         return;
         }
 
-        const data: YoutubeModalData = { youtubeEmbedId: this.project.videoUrl };
+        const data: YoutubeModalData = { youtubeEmbedId: this.project.youtubeId };
         this.dialog.open(YoutubeModalComponent, { minWidth: '50vws', data });
     }
 }

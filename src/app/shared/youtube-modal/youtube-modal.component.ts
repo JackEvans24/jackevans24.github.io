@@ -16,11 +16,6 @@ export class YoutubeModalComponent {
 
     constructor(
         @Inject(MAT_DIALOG_DATA) public data: YoutubeModalData,
-        private dialog: MatDialogRef<YoutubeModalComponent>,
         private sanitizer: DomSanitizer
     ) { }
-
-    close(): void {
-        this.dialog.close();
-    }
 }

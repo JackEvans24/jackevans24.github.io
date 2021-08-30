@@ -11,6 +11,9 @@
             Github Link
         </a>
 
-        <button *ngIf="project.videoUrl" mat-flat-button color="primary" (click)="openProjectVideo()">Project Video</button>
+        <button *ngIf="project.youtubeId" mat-flat-button color="primary" (click)="openProjectVideo()">
+            <img class="logo" src="assets/images/youtube-logo.png">
+            Project Video
+        </button>
     </div>
 </div>
