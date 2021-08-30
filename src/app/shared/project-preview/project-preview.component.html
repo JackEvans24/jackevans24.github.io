@@ -6,14 +6,14 @@
     <mat-card-content *ngIf="project.component" [innerHtml]="project.component"></mat-card-content>
 
     <div class="button-container">
-        <a *ngIf="project.githubLink" mat-flat-button color="primary" [href]="project.githubLink" target="_blank">
+        <a *ngIf="project.githubLink" mat-flat-button color="primary" target="_blank" [href]="project.githubLink">
             <img class="logo" src="assets/images/github-logo.png">
             Github Link
         </a>
 
-        <button *ngIf="project.youtubeId" mat-flat-button color="primary" (click)="openProjectVideo()">
+        <a *ngIf="project.youtubeId" mat-flat-button color="primary" target="_blank" [href]="'https://www.youtube.com/watch?v=' + project.youtubeId">
             <img class="logo" src="assets/images/youtube-logo.png">
             Project Video
-        </button>
+        </a>
     </div>
 </div>
