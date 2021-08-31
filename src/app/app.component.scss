@@ -1,3 +1,38 @@
+@import 'material.scss';
+
+mat-sidenav-container {
+    height: 100%;
+    max-height: 100vh;
+
+    mat-sidenav {
+        padding: 1rem;
+        background-color: mat-color($mat-primary, 50);
+
+        a.mat-button {
+            display: block;
+            text-align: left;
+            margin: 0.25rem 0;
+        }
+    }
+}
+
 a.home-button {
     font-family: 'Comfortaa';
+    font-size: 1.2rem;
+}
+
+a.mat-button.active-link {
+    background-color: mat-color($mat-primary, 200);
+}
+
+@media screen and (max-width: 600px) {
+    mat-toolbar a:not(:first-child,:last-child) {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    mat-toolbar button.menu-button {
+        display: none;
+    }
 }
