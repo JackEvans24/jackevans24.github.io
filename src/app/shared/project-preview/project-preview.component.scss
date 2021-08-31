@@ -3,7 +3,7 @@
 .display-card {
     display: flex;
     flex-flow: column nowrap;
-    background: mat-color($md-main-palette, 50);
+    background: mat-color($mat-primary, 50);
     height: calc(100% - 2rem);
     padding: 1rem;
     border-radius: 0.5rem;
