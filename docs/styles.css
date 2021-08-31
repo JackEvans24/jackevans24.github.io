@@ -2239,6 +2239,9 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
 .flex-mid {
   justify-items: center;
 }
+.flex-spacer {
+  flex-grow: 1;
+}
 .ta-c {
   text-align: center !important;
 }

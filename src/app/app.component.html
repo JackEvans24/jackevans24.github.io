@@ -1,6 +1,31 @@
-<mat-toolbar color="primary">
-  <a mat-button class="home-button" routerLink="/">Jevans' Space</a>
-  <a mat-button routerLink="/projects">Projects</a>
-</mat-toolbar>
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #drawer mode="over" position="end">
+        <ng-container *ngTemplateOutlet="menuItems; context: { showHome: true }"></ng-container>
+    </mat-sidenav>
 
-<router-outlet></router-outlet>
+    <mat-toolbar color="primary">
+        <a mat-button class="home-button" routerLink="/">Jevans' Space</a>
+
+        <ng-container *ngTemplateOutlet="menuItems"></ng-container>
+
+        <span class="flex-spacer"></span>
+
+        <button mat-button class="menu-button" (click)="drawer.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+</mat-sidenav-container>
+
+<ng-template #menuItems let-showHome="showHome">
+    <a mat-button *ngIf="showHome" routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+        <mat-icon>home</mat-icon>
+        Home
+    </a>
+
+    <a mat-button routerLink="/projects" routerLinkActive="active-link">
+        <mat-icon>science</mat-icon>
+        Projects
+    </a>
+</ng-template>
