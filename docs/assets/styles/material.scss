@@ -21,7 +21,7 @@ $my-custom-typography-config: mat-typography-config(
 // Be sure that you only ever include this mixin once!
 @include mat-core($my-custom-typography-config);
 
-$md-main-palette: (
+$mat-primary: (
   50 : #e2f7f7,
   100 : #b6eaea,
   200 : #86dddd,
@@ -57,7 +57,7 @@ $md-main-palette: (
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$jevans-space-primary: mat-palette($md-main-palette);
+$jevans-space-primary: mat-palette($mat-primary);
 
 // The warn palette is optional (defaults to red).
 $jevans-space-warn: mat-palette($mat-red);
@@ -79,5 +79,5 @@ $jevans-space-theme: mat-light-theme((
 
 // Custom styling
 .mat-dialog-container {
-  background-color: mat-color($md-main-palette, 50);
+  background-color: mat-color($mat-primary, 50);
 }
