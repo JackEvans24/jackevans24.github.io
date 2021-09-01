@@ -21,18 +21,29 @@ a.home-button {
     font-size: 1.2rem;
 }
 
+.mobile-spacer {
+    flex-grow: 1;
+    width: 0;
+}
+
+.menu-button {
+    padding: 0;
+}
+
 a.mat-button.active-link {
     background-color: mat-color($mat-primary, 200);
 }
 
 @media screen and (max-width: 600px) {
-    mat-toolbar a:not(:first-child,:last-child) {
-        display: none;
+    mat-toolbar {
+        a:not(:first-child,.home-button) {
+            display: none;
+        }
     }
 }
 
 @media screen and (min-width: 601px) {
-    mat-toolbar button.menu-button {
+    mat-toolbar .mobile-spacer {
         display: none;
     }
 }

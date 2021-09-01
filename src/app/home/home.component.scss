@@ -1,7 +1,13 @@
-@import 'material.scss';
+div.platforms {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
 
-mat-card {
-    background: mat-color($mat-primary, 50);
-    margin: auto;
-    max-width: 50rem;
+    a {
+        margin: 0 0.5rem;
+    }
+
+    img {
+        height: 36px;
+    }
 }
