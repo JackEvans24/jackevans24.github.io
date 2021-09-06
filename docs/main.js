@@ -84,6 +84,30 @@ const mobieBrawl = {
 
 /***/ }),
 
+/***/ "4MGY":
+/*!*****************************************************!*\
+  !*** ./src/app/projects/data/words-from-the-web.ts ***!
+  \*****************************************************/
+/*! exports provided: wordsFromTheWeb */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wordsFromTheWeb", function() { return wordsFromTheWeb; });
+/* harmony import */ var src_app_models_tags__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/models/tags */ "EZH2");
+
+const wordsFromTheWeb = {
+    title: 'Words from the Web',
+    description: 'A WinForms application which uses Selenium to select words from random Google searches',
+    githubLink: 'https://github.com/JackEvans24/words-from-the-world-wide-web',
+    imageUrl: 'assets/images/words-from-the-web.png',
+    // tslint:disable-next-line:no-bitwise
+    tags: src_app_models_tags__WEBPACK_IMPORTED_MODULE_0__["Tags"].CSharp & src_app_models_tags__WEBPACK_IMPORTED_MODULE_0__["Tags"].WinForms
+};
+
+
+/***/ }),
+
 /***/ "4lnS":
 /*!****************************************************!*\
   !*** ./src/app/projects/data/metroidvania-test.ts ***!
@@ -280,6 +304,7 @@ var Tags;
     Tags[Tags["Unity"] = 2] = "Unity";
     Tags[Tags["Javascript"] = 4] = "Javascript";
     Tags[Tags["WinForms"] = 8] = "WinForms";
+    Tags[Tags["Powershell"] = 16] = "Powershell";
 })(Tags || (Tags = {}));
 
 
@@ -300,11 +325,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _data_dice_simulator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data/dice-simulator */ "P5S3");
 /* harmony import */ var _data_dropball__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../data/dropball */ "UkoF");
 /* harmony import */ var _data_file_change__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../data/file-change */ "1N5z");
-/* harmony import */ var _data_metroidvania_test__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../data/metroidvania-test */ "4lnS");
-/* harmony import */ var _data_mobie_brawl__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../data/mobie-brawl */ "294R");
-/* harmony import */ var _data_pink_guy__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../data/pink-guy */ "cr4/");
-/* harmony import */ var _data_random_tv_show__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../data/random-tv-show */ "1iUa");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _data_lock_script__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../data/lock-script */ "OIfU");
+/* harmony import */ var _data_metroidvania_test__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../data/metroidvania-test */ "4lnS");
+/* harmony import */ var _data_mobie_brawl__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../data/mobie-brawl */ "294R");
+/* harmony import */ var _data_mood_lamp__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../data/mood-lamp */ "cau/");
+/* harmony import */ var _data_pink_guy__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../data/pink-guy */ "cr4/");
+/* harmony import */ var _data_random_tv_show__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../data/random-tv-show */ "1iUa");
+/* harmony import */ var _data_words_from_the_web__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../data/words-from-the-web */ "4MGY");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/core */ "fXoL");
 
 
 
@@ -315,14 +343,53 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const apps = [_data_metroidvania_test__WEBPACK_IMPORTED_MODULE_5__["metroidvaniaTest"], _data_file_change__WEBPACK_IMPORTED_MODULE_4__["fileChange"], _data_random_tv_show__WEBPACK_IMPORTED_MODULE_8__["randomTvShow"], _data_dropball__WEBPACK_IMPORTED_MODULE_3__["dropball"], _data_mobie_brawl__WEBPACK_IMPORTED_MODULE_6__["mobieBrawl"], _data_pink_guy__WEBPACK_IMPORTED_MODULE_7__["pinkGuy"], _data_cube_game__WEBPACK_IMPORTED_MODULE_1__["cubeGame"], _data_dice_simulator__WEBPACK_IMPORTED_MODULE_2__["diceSimulator"]];
+
+
+
+const apps = [
+    _data_metroidvania_test__WEBPACK_IMPORTED_MODULE_6__["metroidvaniaTest"],
+    _data_file_change__WEBPACK_IMPORTED_MODULE_4__["fileChange"],
+    _data_random_tv_show__WEBPACK_IMPORTED_MODULE_10__["randomTvShow"],
+    _data_dropball__WEBPACK_IMPORTED_MODULE_3__["dropball"],
+    _data_mobie_brawl__WEBPACK_IMPORTED_MODULE_7__["mobieBrawl"],
+    _data_pink_guy__WEBPACK_IMPORTED_MODULE_9__["pinkGuy"],
+    _data_cube_game__WEBPACK_IMPORTED_MODULE_1__["cubeGame"],
+    _data_dice_simulator__WEBPACK_IMPORTED_MODULE_2__["diceSimulator"],
+    _data_words_from_the_web__WEBPACK_IMPORTED_MODULE_11__["wordsFromTheWeb"],
+    _data_mood_lamp__WEBPACK_IMPORTED_MODULE_8__["moodLamp"],
+    _data_lock_script__WEBPACK_IMPORTED_MODULE_5__["lockScript"]
+];
 class ProjectService {
     getApps() {
         return Object(rxjs__WEBPACK_IMPORTED_MODULE_0__["of"])(apps);
     }
 }
 ProjectService.ɵfac = function ProjectService_Factory(t) { return new (t || ProjectService)(); };
-ProjectService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineInjectable"]({ token: ProjectService, factory: ProjectService.ɵfac, providedIn: 'root' });
+ProjectService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵdefineInjectable"]({ token: ProjectService, factory: ProjectService.ɵfac, providedIn: 'root' });
+
+
+/***/ }),
+
+/***/ "OIfU":
+/*!**********************************************!*\
+  !*** ./src/app/projects/data/lock-script.ts ***!
+  \**********************************************/
+/*! exports provided: lockScript */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lockScript", function() { return lockScript; });
+/* harmony import */ var src_app_models_tags__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/models/tags */ "EZH2");
+
+const lockScript = {
+    title: 'Windows Lock Script',
+    description: 'A Powershell script which locks a PC once a day at the same time',
+    githubLink: 'https://github.com/JackEvans24/lock-windows-script',
+    imageUrl: 'assets/images/windows-lock-script.png',
+    // tslint:disable-next-line:no-bitwise
+    tags: src_app_models_tags__WEBPACK_IMPORTED_MODULE_0__["Tags"].Powershell
+};
 
 
 /***/ }),
@@ -587,6 +654,30 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjector
         _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_1__["BrowserAnimationsModule"],
         _projects_projects_module__WEBPACK_IMPORTED_MODULE_5__["ProjectsModule"],
         _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__["SharedModule"]] }); })();
+
+
+/***/ }),
+
+/***/ "cau/":
+/*!********************************************!*\
+  !*** ./src/app/projects/data/mood-lamp.ts ***!
+  \********************************************/
+/*! exports provided: moodLamp */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "moodLamp", function() { return moodLamp; });
+/* harmony import */ var src_app_models_tags__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/models/tags */ "EZH2");
+
+const moodLamp = {
+    title: 'Virtual Mood Lamp',
+    description: 'An Electron application which fills the window with slowly-changing random colours',
+    githubLink: 'https://github.com/JackEvans24/virtual-mood-lamp',
+    imageUrl: 'assets/images/mood-lamp.png',
+    // tslint:disable-next-line:no-bitwise
+    tags: src_app_models_tags__WEBPACK_IMPORTED_MODULE_0__["Tags"].Javascript
+};
 
 
 /***/ }),
