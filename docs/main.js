@@ -213,34 +213,34 @@ __webpack_require__.r(__webpack_exports__);
 class HomeComponent {
 }
 HomeComponent.ɵfac = function HomeComponent_Factory(t) { return new (t || HomeComponent)(); };
-HomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HomeComponent, selectors: [["app-home"]], decls: 30, vars: 0, consts: [[1, "flex-col", "ta-c", "mx-2"], [1, "mat-display-3", "my-4"], [1, "mat-title", "mb-4"], ["mat-flat-button", "", "color", "primary", "href", "/projects"], [1, "mat-title", "my-4"], ["mat-flat-button", "", "color", "primary", "href", "assets/documents/jack-evans-cv.pdf", "target", "_blank"], [1, "platforms"], ["href", "https://www.linkedin.com/in/jack-evans-7b6130bb/", "target", "_blank", "matTooltip", "LinkedIn"], ["src", "assets/images/logos/linkedin-logo.png", "alt", "LinkedIn logo"], ["href", "https://github.com/JackEvans24/", "target", "_blank", "matTooltip", "GitHub"], ["src", "assets/images/logos/github-logo.png", "alt", "GitHub logo"], ["href", "https://jevansmassive.itch.io/", "target", "_blank", "matTooltip", "itch.io"], ["src", "assets/images/logos/itch-logo.png", "alt", "itch.io logo"], ["href", "https://www.redbubble.com/people/Jevansmassive/explore/", "target", "_blank", "matTooltip", "Redbubble"], ["src", "assets/images/logos/redbubble-logo.png", "alt", "Redbubble logo"], ["href", "https://open.spotify.com/user/kizbjf08z7d5hz40z4fugw2qw", "target", "_blank", "matTooltip", "Spotify"], ["src", "assets/images/logos/spotify-logo.png", "alt", "Spotify logo"], ["href", "https://letterboxd.com/Jevansmassive/", "target", "_blank", "matTooltip", "Letterboxd"], ["src", "assets/images/logos/letterboxd-logo.svg", "alt", "Letterboxd logo"], ["href", "https://steamcommunity.com/id/jevansmassive/", "target", "_blank", "matTooltip", "Steam"], ["src", "assets/images/logos/steam-logo.png", "alt", "Steam logo"]], template: function HomeComponent_Template(rf, ctx) { if (rf & 1) {
+HomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HomeComponent, selectors: [["app-home"]], decls: 32, vars: 0, consts: [[1, "flex-col", "ta-c", "mx-2"], [1, "mat-display-3", "mt-4", "mb-2"], [1, "shrug", "mb-2", "px-2"], ["src", "assets/images/jevans-shrug-transparent.png", "alt", "Shrug emoticon"], [1, "mat-title", "mb-4"], ["mat-flat-button", "", "color", "primary", "href", "/projects"], [1, "mat-title", "my-4"], ["mat-flat-button", "", "color", "primary", "href", "assets/documents/jack-evans-cv.pdf", "target", "_blank"], [1, "platforms"], ["href", "https://www.linkedin.com/in/jack-evans-7b6130bb/", "target", "_blank", "matTooltip", "LinkedIn"], ["src", "assets/images/logos/linkedin-logo.png", "alt", "LinkedIn logo"], ["href", "https://github.com/JackEvans24/", "target", "_blank", "matTooltip", "GitHub"], ["src", "assets/images/logos/github-logo.png", "alt", "GitHub logo"], ["href", "https://jevansmassive.itch.io/", "target", "_blank", "matTooltip", "itch.io"], ["src", "assets/images/logos/itch-logo.png", "alt", "itch.io logo"], ["href", "https://www.redbubble.com/people/Jevansmassive/explore/", "target", "_blank", "matTooltip", "Redbubble"], ["src", "assets/images/logos/redbubble-logo.png", "alt", "Redbubble logo"], ["href", "https://open.spotify.com/user/kizbjf08z7d5hz40z4fugw2qw", "target", "_blank", "matTooltip", "Spotify"], ["src", "assets/images/logos/spotify-logo.png", "alt", "Spotify logo"], ["href", "https://letterboxd.com/Jevansmassive/", "target", "_blank", "matTooltip", "Letterboxd"], ["src", "assets/images/logos/letterboxd-logo.svg", "alt", "Letterboxd logo"], ["href", "https://steamcommunity.com/id/jevansmassive/", "target", "_blank", "matTooltip", "Steam"], ["src", "assets/images/logos/steam-logo.png", "alt", "Steam logo"]], template: function HomeComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Jevans' Space");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "You can click this button to view some of my projects");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "img", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "a", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, " View Projects ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "You can click this button to view some of my projects");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "You can click this button to download my CV");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "a", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, " Download CV ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "a", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, " View Projects ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "You can find me on any of these platforms");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "You can click this button to download my CV");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "a", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, " Download CV ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "a", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](17, "img", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, "You can find me on any of these platforms");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 8);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "a", 9);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](19, "img", 10);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -259,9 +259,12 @@ HomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "a", 19);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](29, "img", 20);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "a", 21);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](31, "img", 22);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } }, directives: [_angular_material_button__WEBPACK_IMPORTED_MODULE_1__["MatAnchor"], _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_2__["MatTooltip"]], styles: ["div.platforms[_ngcontent-%COMP%] {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: center;\n}\ndiv.platforms[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  margin: 0 0.5rem;\n}\ndiv.platforms[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  height: 36px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXGhvbWUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSx1QkFBQTtBQUNKO0FBQ0k7RUFDSSxnQkFBQTtBQUNSO0FBRUk7RUFDSSxZQUFBO0FBQVIiLCJmaWxlIjoiaG9tZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImRpdi5wbGF0Zm9ybXMge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGZsZXgtZmxvdzogcm93IHdyYXA7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuXHJcbiAgICBhIHtcclxuICAgICAgICBtYXJnaW46IDAgMC41cmVtO1xyXG4gICAgfVxyXG5cclxuICAgIGltZyB7XHJcbiAgICAgICAgaGVpZ2h0OiAzNnB4O1xyXG4gICAgfVxyXG59Il19 */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } }, directives: [_angular_material_button__WEBPACK_IMPORTED_MODULE_1__["MatAnchor"], _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_2__["MatTooltip"]], styles: ["div.shrug[_ngcontent-%COMP%] {\n  text-align: center;\n}\ndiv.shrug[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  max-height: 10rem;\n  max-width: 100%;\n  object-fit: fill;\n}\ndiv.platforms[_ngcontent-%COMP%] {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: center;\n}\ndiv.platforms[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  margin: 0 0.5rem;\n}\ndiv.platforms[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  height: 36px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXGhvbWUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBQTtBQUNKO0FBQ0k7RUFDSSxpQkFBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtBQUNSO0FBR0E7RUFDSSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSx1QkFBQTtBQUFKO0FBRUk7RUFDSSxnQkFBQTtBQUFSO0FBR0k7RUFDSSxZQUFBO0FBRFIiLCJmaWxlIjoiaG9tZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImRpdi5zaHJ1ZyB7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcblxyXG4gICAgaW1nIHtcclxuICAgICAgICBtYXgtaGVpZ2h0OiAxMHJlbTtcclxuICAgICAgICBtYXgtd2lkdGg6IDEwMCU7XHJcbiAgICAgICAgb2JqZWN0LWZpdDogZmlsbDtcclxuICAgIH1cclxufVxyXG5cclxuZGl2LnBsYXRmb3JtcyB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC1mbG93OiByb3cgd3JhcDtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG5cclxuICAgIGEge1xyXG4gICAgICAgIG1hcmdpbjogMCAwLjVyZW07XHJcbiAgICB9XHJcblxyXG4gICAgaW1nIHtcclxuICAgICAgICBoZWlnaHQ6IDM2cHg7XHJcbiAgICB9XHJcbn0iXX0= */"] });
 
 
 /***/ }),
