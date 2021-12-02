@@ -84,6 +84,58 @@ const mobieBrawl = {
 
 /***/ }),
 
+/***/ "3Ebl":
+/*!************************************************!*\
+  !*** ./src/app/games/data/graveyard-prince.ts ***!
+  \************************************************/
+/*! exports provided: graveyardPrince */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "graveyardPrince", function() { return graveyardPrince; });
+const graveyardPrince = {
+    embedId: 1256665,
+    name: 'Graveyard Prince',
+    url: 'graveyard-prince'
+};
+
+
+/***/ }),
+
+/***/ "3tee":
+/*!*************************************************!*\
+  !*** ./src/app/games/services/games.service.ts ***!
+  \*************************************************/
+/*! exports provided: GamesService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GamesService", function() { return GamesService; });
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ "qCKp");
+/* harmony import */ var _data_graveyard_prince__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data/graveyard-prince */ "3Ebl");
+/* harmony import */ var _data_scuttlebug_derby__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data/scuttlebug-derby */ "xtZl");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+
+
+const games = [
+    _data_graveyard_prince__WEBPACK_IMPORTED_MODULE_1__["graveyardPrince"],
+    _data_scuttlebug_derby__WEBPACK_IMPORTED_MODULE_2__["scuttlebugDerby"]
+];
+class GamesService {
+    getApps() {
+        return Object(rxjs__WEBPACK_IMPORTED_MODULE_0__["of"])(games);
+    }
+}
+GamesService.ɵfac = function GamesService_Factory(t) { return new (t || GamesService)(); };
+GamesService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjectable"]({ token: GamesService, factory: GamesService.ɵfac, providedIn: 'root' });
+
+
+/***/ }),
+
 /***/ "4MGY":
 /*!*****************************************************!*\
   !*** ./src/app/projects/data/words-from-the-web.ts ***!
@@ -315,6 +367,34 @@ var Tags;
     Tags[Tags["WinForms"] = 8] = "WinForms";
     Tags[Tags["Powershell"] = 16] = "Powershell";
 })(Tags || (Tags = {}));
+
+
+/***/ }),
+
+/***/ "Eq5z":
+/*!***************************************!*\
+  !*** ./src/app/games/games.module.ts ***!
+  \***************************************/
+/*! exports provided: GamesModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GamesModule", function() { return GamesModule; });
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/shared.module */ "PCNd");
+/* harmony import */ var _games_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./games.component */ "mdyf");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+
+
+class GamesModule {
+}
+GamesModule.ɵfac = function GamesModule_Factory(t) { return new (t || GamesModule)(); };
+GamesModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: GamesModule });
+GamesModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_1__["SharedModule"]]] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](GamesModule, { declarations: [_games_component__WEBPACK_IMPORTED_MODULE_2__["GamesComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_1__["SharedModule"]] }); })();
 
 
 /***/ }),
@@ -707,7 +787,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser/animations */ "R1ws");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app-routing.module */ "vY5A");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "Sy1n");
-/* harmony import */ var _games_games_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./games/games.component */ "mdyf");
+/* harmony import */ var _games_games_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./games/games.module */ "Eq5z");
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./home/home.component */ "9vUh");
 /* harmony import */ var _merch_merch_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./merch/merch.component */ "SscM");
 /* harmony import */ var _projects_projects_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./projects/projects.module */ "Wm2z");
@@ -731,15 +811,16 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineInjector
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
             _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_1__["BrowserAnimationsModule"],
+            _games_games_module__WEBPACK_IMPORTED_MODULE_4__["GamesModule"],
             _projects_projects_module__WEBPACK_IMPORTED_MODULE_7__["ProjectsModule"],
             _shared_shared_module__WEBPACK_IMPORTED_MODULE_8__["SharedModule"]
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
         _home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"],
-        _merch_merch_component__WEBPACK_IMPORTED_MODULE_6__["MerchComponent"],
-        _games_games_component__WEBPACK_IMPORTED_MODULE_4__["GamesComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+        _merch_merch_component__WEBPACK_IMPORTED_MODULE_6__["MerchComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
         _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
         _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_1__["BrowserAnimationsModule"],
+        _games_games_module__WEBPACK_IMPORTED_MODULE_4__["GamesModule"],
         _projects_projects_module__WEBPACK_IMPORTED_MODULE_7__["ProjectsModule"],
         _shared_shared_module__WEBPACK_IMPORTED_MODULE_8__["SharedModule"]] }); })();
 
@@ -805,11 +886,41 @@ const pinkGuy = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GamesComponent", function() { return GamesComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _services_games_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./services/games.service */ "3tee");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "jhN1");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "ofXK");
 
+
+
+
+function GamesComponent_div_7_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "iframe", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "a", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const game_r1 = ctx.$implicit;
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", ctx_r0.getSafeEmbedUrl(game_r1), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeResourceUrl"])("width", ctx_r0.compactView ? 210 : 552);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("href", ctx_r0.getSafeGameUrl(game_r1), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", game_r1.name, " by Jevansmassive");
+} }
 class GamesComponent {
-    constructor() {
+    constructor(service, sanitiser) {
+        this.service = service;
+        this.sanitiser = sanitiser;
         this.compactView = false;
+        this.games = [];
         this.setCompactView();
+    }
+    ngOnInit() {
+        this.service.getApps().subscribe(games => this.games = games);
     }
     onResize(event) {
         this.setCompactView();
@@ -817,11 +928,17 @@ class GamesComponent {
     setCompactView() {
         this.compactView = window.innerWidth < 601;
     }
+    getSafeEmbedUrl(game) {
+        return this.sanitiser.bypassSecurityTrustResourceUrl('https://itch.io/embed/' + game.embedId);
+    }
+    getSafeGameUrl(game) {
+        return this.sanitiser.bypassSecurityTrustResourceUrl('https://jevansmassive.itch.io/' + game.url);
+    }
 }
-GamesComponent.ɵfac = function GamesComponent_Factory(t) { return new (t || GamesComponent)(); };
+GamesComponent.ɵfac = function GamesComponent_Factory(t) { return new (t || GamesComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_games_service__WEBPACK_IMPORTED_MODULE_1__["GamesService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["DomSanitizer"])); };
 GamesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: GamesComponent, selectors: [["app-games"]], hostBindings: function GamesComponent_HostBindings(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("resize", function GamesComponent_resize_HostBindingHandler($event) { return ctx.onResize($event); }, false, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresolveWindow"]);
-    } }, decls: 10, vars: 1, consts: [[1, "mx-2", "ta-c"], [1, "mat-display-3", "mt-4", "mb-2"], [1, "mat-title"], [1, "mat-subheading-2", "mb-4"], ["src", "https://itch.io/embed/1256665", "height", "167", "frameborder", "0", 3, "width"], ["href", "https://jevansmassive.itch.io/graveyard-prince"]], template: function GamesComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 8, vars: 1, consts: [[1, "mx-2", "ta-c"], [1, "mat-display-3", "mt-4", "mb-2"], [1, "mat-title"], [1, "mat-subheading-2", "mb-4"], ["class", "mb-2", 4, "ngFor", "ngForOf"], [1, "mb-2"], ["height", "167", "frameborder", "0", 3, "src", "width"], [3, "href"]], template: function GamesComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Games");
@@ -830,18 +947,14 @@ GamesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCom
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "My pride and joy");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "These games are free to play and should be playable straight from the browser - no download required");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "These games were made for various game jams, and are free to play!");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "iframe", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "a", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Graveyard Prince by Jevansmassive");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, GamesComponent_div_7_Template, 4, 4, "div", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("width", ctx.compactView ? 210 : 552);
-    } }, encapsulation: 2 });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.games);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"]], encapsulation: 2 });
 
 
 /***/ }),
@@ -881,6 +994,25 @@ AppRoutingModule.ɵfac = function AppRoutingModule_Factory(t) { return new (t ||
 AppRoutingModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineNgModule"]({ type: AppRoutingModule });
 AppRoutingModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector"]({ imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRoot(routes)], _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵsetNgModuleScope"](AppRoutingModule, { imports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]] }); })();
+
+
+/***/ }),
+
+/***/ "xtZl":
+/*!************************************************!*\
+  !*** ./src/app/games/data/scuttlebug-derby.ts ***!
+  \************************************************/
+/*! exports provided: scuttlebugDerby */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scuttlebugDerby", function() { return scuttlebugDerby; });
+const scuttlebugDerby = {
+    embedId: 1275174,
+    name: 'Scuttlebug Derby',
+    url: 'scuttlebug-derby'
+};
 
 
 /***/ }),
