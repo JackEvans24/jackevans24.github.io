@@ -114,16 +114,19 @@ const graveyardPrince = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GamesService", function() { return GamesService; });
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ "qCKp");
-/* harmony import */ var _data_graveyard_prince__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data/graveyard-prince */ "3Ebl");
-/* harmony import */ var _data_scuttlebug_derby__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data/scuttlebug-derby */ "xtZl");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _data_fingerguns__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data/fingerguns */ "B79W");
+/* harmony import */ var _data_graveyard_prince__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data/graveyard-prince */ "3Ebl");
+/* harmony import */ var _data_scuttlebug_derby__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../data/scuttlebug-derby */ "xtZl");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
 
 
 
 
 const games = [
-    _data_graveyard_prince__WEBPACK_IMPORTED_MODULE_1__["graveyardPrince"],
-    _data_scuttlebug_derby__WEBPACK_IMPORTED_MODULE_2__["scuttlebugDerby"]
+    _data_graveyard_prince__WEBPACK_IMPORTED_MODULE_2__["graveyardPrince"],
+    _data_scuttlebug_derby__WEBPACK_IMPORTED_MODULE_3__["scuttlebugDerby"],
+    _data_fingerguns__WEBPACK_IMPORTED_MODULE_1__["fingerguns"]
 ];
 class GamesService {
     getApps() {
@@ -131,7 +134,7 @@ class GamesService {
     }
 }
 GamesService.ɵfac = function GamesService_Factory(t) { return new (t || GamesService)(); };
-GamesService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjectable"]({ token: GamesService, factory: GamesService.ɵfac, providedIn: 'root' });
+GamesService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjectable"]({ token: GamesService, factory: GamesService.ɵfac, providedIn: 'root' });
 
 
 /***/ }),
@@ -345,6 +348,25 @@ const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+
+/***/ }),
+
+/***/ "B79W":
+/*!******************************************!*\
+  !*** ./src/app/games/data/fingerguns.ts ***!
+  \******************************************/
+/*! exports provided: fingerguns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fingerguns", function() { return fingerguns; });
+const fingerguns = {
+    embedId: 1311490,
+    name: 'Fingerguns',
+    url: 'fingerguns'
+};
 
 
 /***/ }),
