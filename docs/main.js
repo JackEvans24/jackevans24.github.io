@@ -117,7 +117,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _data_fingerguns__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data/fingerguns */ "B79W");
 /* harmony import */ var _data_graveyard_prince__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data/graveyard-prince */ "3Ebl");
 /* harmony import */ var _data_scuttlebug_derby__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../data/scuttlebug-derby */ "xtZl");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _data_stop_the_tribe__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../data/stop-the-tribe */ "4siS");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
 
 
 
@@ -126,7 +128,8 @@ __webpack_require__.r(__webpack_exports__);
 const games = [
     _data_graveyard_prince__WEBPACK_IMPORTED_MODULE_2__["graveyardPrince"],
     _data_scuttlebug_derby__WEBPACK_IMPORTED_MODULE_3__["scuttlebugDerby"],
-    _data_fingerguns__WEBPACK_IMPORTED_MODULE_1__["fingerguns"]
+    _data_fingerguns__WEBPACK_IMPORTED_MODULE_1__["fingerguns"],
+    _data_stop_the_tribe__WEBPACK_IMPORTED_MODULE_4__["stopTheTribe"]
 ];
 class GamesService {
     getApps() {
@@ -134,7 +137,7 @@ class GamesService {
     }
 }
 GamesService.ɵfac = function GamesService_Factory(t) { return new (t || GamesService)(); };
-GamesService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjectable"]({ token: GamesService, factory: GamesService.ɵfac, providedIn: 'root' });
+GamesService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjectable"]({ token: GamesService, factory: GamesService.ɵfac, providedIn: 'root' });
 
 
 /***/ }),
@@ -182,6 +185,25 @@ const metroidvaniaTest = {
     imageUrl: 'assets/images/metroidvania-test.png',
     // tslint:disable-next-line:no-bitwise
     tags: src_app_models_tags__WEBPACK_IMPORTED_MODULE_0__["Tags"].CSharp | src_app_models_tags__WEBPACK_IMPORTED_MODULE_0__["Tags"].Unity
+};
+
+
+/***/ }),
+
+/***/ "4siS":
+/*!**********************************************!*\
+  !*** ./src/app/games/data/stop-the-tribe.ts ***!
+  \**********************************************/
+/*! exports provided: stopTheTribe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stopTheTribe", function() { return stopTheTribe; });
+const stopTheTribe = {
+    embedId: 1365834,
+    name: 'Stop the Tribe',
+    url: 'stop-the-tribe'
 };
 
 
@@ -268,7 +290,7 @@ __webpack_require__.r(__webpack_exports__);
 class HomeComponent {
 }
 HomeComponent.ɵfac = function HomeComponent_Factory(t) { return new (t || HomeComponent)(); };
-HomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HomeComponent, selectors: [["app-home"]], decls: 32, vars: 0, consts: [[1, "flex-col", "ta-c", "mx-2"], [1, "mat-display-3", "mt-4", "mb-2"], [1, "shrug", "mb-2", "px-2"], ["src", "assets/images/jevans-shrug-transparent.png", "alt", "Shrug emoticon"], [1, "mat-title", "mb-4"], ["mat-flat-button", "", "color", "primary", "href", "/projects"], [1, "mat-title", "my-4"], ["mat-flat-button", "", "color", "primary", "href", "assets/documents/jack-evans-cv.pdf", "target", "_blank"], [1, "platforms"], ["href", "https://www.linkedin.com/in/jack-evans-7b6130bb/", "target", "_blank", "matTooltip", "LinkedIn"], ["src", "assets/images/logos/linkedin-logo.png", "alt", "LinkedIn logo"], ["href", "https://github.com/JackEvans24/", "target", "_blank", "matTooltip", "GitHub"], ["src", "assets/images/logos/github-logo.png", "alt", "GitHub logo"], ["href", "https://jevansmassive.itch.io/", "target", "_blank", "matTooltip", "itch.io"], ["src", "assets/images/logos/itch-logo.png", "alt", "itch.io logo"], ["href", "https://www.redbubble.com/people/Jevansmassive/explore/", "target", "_blank", "matTooltip", "Redbubble"], ["src", "assets/images/logos/redbubble-logo.png", "alt", "Redbubble logo"], ["href", "https://open.spotify.com/user/kizbjf08z7d5hz40z4fugw2qw", "target", "_blank", "matTooltip", "Spotify"], ["src", "assets/images/logos/spotify-logo.png", "alt", "Spotify logo"], ["href", "https://letterboxd.com/Jevansmassive/", "target", "_blank", "matTooltip", "Letterboxd"], ["src", "assets/images/logos/letterboxd-logo.svg", "alt", "Letterboxd logo"], ["href", "https://steamcommunity.com/id/jevansmassive/", "target", "_blank", "matTooltip", "Steam"], ["src", "assets/images/logos/steam-logo.png", "alt", "Steam logo"]], template: function HomeComponent_Template(rf, ctx) { if (rf & 1) {
+HomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HomeComponent, selectors: [["app-home"]], decls: 34, vars: 0, consts: [[1, "flex-col", "ta-c", "mx-2"], [1, "mat-display-3", "mt-4", "mb-2"], [1, "shrug", "mb-2", "px-2"], ["src", "assets/images/jevans-shrug-transparent.png", "alt", "Shrug emoticon"], [1, "mat-title", "mb-4"], ["mat-flat-button", "", "color", "primary", "href", "/projects"], [1, "mat-title", "my-4"], ["mat-flat-button", "", "color", "primary", "href", "assets/documents/jack-evans-cv.pdf", "target", "_blank"], [1, "platforms"], ["href", "https://twitter.com/Jevans_Games", "target", "_blank", "matTooltip", "Twitter"], ["src", "assets/images/logos/twitter-logo.png", "alt", "Twitter logo"], ["href", "https://www.linkedin.com/in/jack-evans-7b6130bb/", "target", "_blank", "matTooltip", "LinkedIn"], ["src", "assets/images/logos/linkedin-logo.png", "alt", "LinkedIn logo"], ["href", "https://github.com/JackEvans24/", "target", "_blank", "matTooltip", "GitHub"], ["src", "assets/images/logos/github-logo.png", "alt", "GitHub logo"], ["href", "https://jevansmassive.itch.io/", "target", "_blank", "matTooltip", "itch.io"], ["src", "assets/images/logos/itch-logo.png", "alt", "itch.io logo"], ["href", "https://www.redbubble.com/people/Jevansmassive/explore/", "target", "_blank", "matTooltip", "Redbubble"], ["src", "assets/images/logos/redbubble-logo.png", "alt", "Redbubble logo"], ["href", "https://open.spotify.com/user/kizbjf08z7d5hz40z4fugw2qw", "target", "_blank", "matTooltip", "Spotify"], ["src", "assets/images/logos/spotify-logo.png", "alt", "Spotify logo"], ["href", "https://letterboxd.com/Jevansmassive/", "target", "_blank", "matTooltip", "Letterboxd"], ["src", "assets/images/logos/letterboxd-logo.svg", "alt", "Letterboxd logo"], ["href", "https://steamcommunity.com/id/jevansmassive/", "target", "_blank", "matTooltip", "Steam"], ["src", "assets/images/logos/steam-logo.png", "alt", "Steam logo"]], template: function HomeComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Jevans' Space");
@@ -316,6 +338,9 @@ HomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "a", 21);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](31, "img", 22);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "a", 23);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](33, "img", 24);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
