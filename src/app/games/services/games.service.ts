@@ -6,11 +6,13 @@ import { IGame } from 'src/app/models/game';
 import { fingerguns } from '../data/fingerguns';
 import { graveyardPrince } from '../data/graveyard-prince';
 import { scuttlebugDerby } from '../data/scuttlebug-derby';
+import { stopTheTribe } from '../data/stop-the-tribe';
 
 const games: IGame[] = [
     graveyardPrince,
     scuttlebugDerby,
-    fingerguns
+    fingerguns,
+    stopTheTribe
 ];
 
 @Injectable({
