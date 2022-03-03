@@ -118,7 +118,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _data_graveyard_prince__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data/graveyard-prince */ "3Ebl");
 /* harmony import */ var _data_scuttlebug_derby__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../data/scuttlebug-derby */ "xtZl");
 /* harmony import */ var _data_stop_the_tribe__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../data/stop-the-tribe */ "4siS");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _data_the_ringing__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../data/the-ringing */ "GN2Y");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
 
 
 
@@ -129,7 +131,8 @@ const games = [
     _data_graveyard_prince__WEBPACK_IMPORTED_MODULE_2__["graveyardPrince"],
     _data_scuttlebug_derby__WEBPACK_IMPORTED_MODULE_3__["scuttlebugDerby"],
     _data_fingerguns__WEBPACK_IMPORTED_MODULE_1__["fingerguns"],
-    _data_stop_the_tribe__WEBPACK_IMPORTED_MODULE_4__["stopTheTribe"]
+    _data_stop_the_tribe__WEBPACK_IMPORTED_MODULE_4__["stopTheTribe"],
+    _data_the_ringing__WEBPACK_IMPORTED_MODULE_5__["theRinging"]
 ];
 class GamesService {
     getApps() {
@@ -137,7 +140,7 @@ class GamesService {
     }
 }
 GamesService.ɵfac = function GamesService_Factory(t) { return new (t || GamesService)(); };
-GamesService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjectable"]({ token: GamesService, factory: GamesService.ɵfac, providedIn: 'root' });
+GamesService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjectable"]({ token: GamesService, factory: GamesService.ɵfac, providedIn: 'root' });
 
 
 /***/ }),
@@ -442,6 +445,25 @@ GamesModule.ɵfac = function GamesModule_Factory(t) { return new (t || GamesModu
 GamesModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: GamesModule });
 GamesModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_1__["SharedModule"]]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](GamesModule, { declarations: [_games_component__WEBPACK_IMPORTED_MODULE_2__["GamesComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_1__["SharedModule"]] }); })();
+
+
+/***/ }),
+
+/***/ "GN2Y":
+/*!*******************************************!*\
+  !*** ./src/app/games/data/the-ringing.ts ***!
+  \*******************************************/
+/*! exports provided: theRinging */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "theRinging", function() { return theRinging; });
+const theRinging = {
+    embedId: 1414070,
+    name: 'The Ringing',
+    url: 'the-ringing'
+};
 
 
 /***/ }),
