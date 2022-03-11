@@ -1,0 +1,11 @@
+<div class="mat-display-1 mt-4 mb-4 ta-c">Games</div>
+
+<div class="ta-c">
+    <div class="game-container" *ngFor="let game of games">
+        <div class="game-name">{{ boardGameMap[game.gameId]?.name || game.gameId }}</div>
+        <div class="game-players">{{ game.players.length }} player{{ game.players.length === 1 ? '' : 's' }}</div>
+        <div class="game-date">{{ game.date | date }}</div>
+
+        <a mat-mini-fab class="mx-2" color="primary" [routerLink]="game.id.toString()"><mat-icon>visibility</mat-icon></a>
+    </div>
+</div>

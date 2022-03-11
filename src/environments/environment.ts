@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyBkbt7IUN2uL1TPZnq605e16UrF9CufyQU',
+    authDomain: 'jevans-scoreboard.firebaseapp.com',
+    databaseURL: 'https://jevans-scoreboard-default-rtdb.europe-west1.firebasedatabase.app',
+    projectId: 'jevans-scoreboard',
+    storageBucket: 'jevans-scoreboard.appspot.com',
+    messagingSenderId: '444388364961',
+    appId: '1:444388364961:web:e1e2fc2a06d88f776316e0'
+  }
 };
 
 /*

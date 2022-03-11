@@ -1,0 +1,22 @@
+.player-container {
+    display: flex;
+    margin: 1rem auto;
+    padding: 1rem 0;
+    border: 1px solid;
+    border-radius: 10px;
+    justify-content: space-around;
+    max-width: 50rem;
+
+    * {
+        margin: 0 1rem;;
+    }
+
+    .player-name {
+        font-weight: bold;
+    }
+
+    .player-date {
+        font-style: italic;
+        font-size: 80%;
+    }
+}
