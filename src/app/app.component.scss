@@ -34,6 +34,10 @@ a.mat-button.active-link {
     background-color: mat-color($mat-primary, 200);
 }
 
+.content-container {
+    padding: 0 1rem;
+}
+
 @media screen and (max-width: 600px) {
     mat-toolbar {
         a:not(:first-child,.home-button) {
