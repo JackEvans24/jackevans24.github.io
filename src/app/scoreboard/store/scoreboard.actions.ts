@@ -4,7 +4,7 @@ import { Player } from '../models/scoreboard-player';
 
 export class RefreshScoreboardData {
     static readonly type = '[Scoreboard] Refresh Data';
-    constructor(public force: boolean) {}
+    constructor(public force: boolean = false) {}
 }
 
 export class UpdateBoardGames {

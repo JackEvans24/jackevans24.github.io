@@ -35,6 +35,6 @@ export class BoardGamesComponent implements OnInit {
             .pipe(untilDestroyed(this))
             .subscribe(games => this.games = games);
 
-        this.store.dispatch(new RefreshScoreboardData(false));
+        this.store.dispatch(new RefreshScoreboardData());
     }
 }
