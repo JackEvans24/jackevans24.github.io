@@ -1,20 +1,21 @@
+<div class="game-container">
+    <ng-container *ngIf="!!game">
+        <div class="game-details">
+            <!-- <div class="game-name">{{ boardGameMap[game.gameId]?.name || game.gameId }}</div> -->
+            <div class="game-name">{{ game.gameId }}</div>
+            <div class="game-players">{{ game.players.length }} player{{ game.players.length === 1 ? '' : 's' }}</div>
+            <div class="game-date">{{ game.date | date }}</div>
 
-<ng-container *ngIf="!loading; else loadingContainer">
-    <div *ngIf="game" class="ta-c">
-        <div class="my-4">
-            <div class="mat-display-1 mb-2 ta-c">{{  boardGameMap[game.gameId]?.name || game.gameId }}</div>
-            <div class="mat-headline">{{ game.date | date }}</div>
+            <button mat-mini-fab class="mx-2" color="primary" (click)="toggleExpand()" [matTooltip]="expanded ? 'Hide details' : 'Show details'">
+                <mat-icon>{{ expanded ? 'expand_less' : 'expand_more' }}</mat-icon>
+            </button>
         </div>
-
-        <div class="player-container" *ngFor="let player of game.players">
-            <div class="player-name">{{ playerMap[player.id]?.name || player.id }}</div>
-            <div class="player-score">{{ player.score }}</div>
-        </div>
-    </div>
-</ng-container>
-
-<ng-template #loadingContainer>Loading...</ng-template>
-
-<div class="ta-c">
-    <button mat-flat-button color="primary" routerLink="games">Back to games</button>
+        <ng-container *ngIf="expanded">
+            <div class="game-score" *ngFor="let player of game.players">
+                <!-- <div class="player-name">{{ playerMap[player.id]?.name || player.id }}</div> -->
+                <div class="player-name">{{ player.id }}</div>
+                <div class="player-score">{{ player.score }}</div>
+            </div>
+        </ng-container>
+    </ng-container>
 </div>
