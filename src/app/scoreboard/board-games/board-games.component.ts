@@ -31,9 +31,9 @@ export class BoardGamesComponent implements OnInit {
             .subscribe(map => this.boardGameMap = map);
 
         this.store
-            .select(ScoreboardState.gamesMap)
+            .select(ScoreboardState.games)
             .pipe(untilDestroyed(this))
-            .subscribe(map => this.games = Object.values(map));
+            .subscribe(games => this.games = games);
 
         this.store.dispatch(new RefreshScoreboardData(false));
     }
