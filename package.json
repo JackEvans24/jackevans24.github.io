@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "~11.2.13",
     "@angular/router": "~11.2.13",
     "@ngneat/until-destroy": "^8.1.4",
+    "@ngxs/store": "^3.7.3",
     "firebase": "^8.10.1",
     "rxjs": "~6.6.0",
     "timers": "^0.1.1",
