@@ -19,8 +19,8 @@ export class PlayersComponent implements OnInit {
     }
 
     public async getPlayers(): Promise<void> {
-        this.service.getAllPlayers()
-            .subscribe(players => this.players = players);
+        // this.service.getAllPlayers()
+        //     .subscribe(players => this.players = players);
     }
 
     observeOnDestroy(): void {}
