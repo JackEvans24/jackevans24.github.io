@@ -29,18 +29,25 @@
             }
     }
 
+    hr {
+        width: 80%;
+        margin: 1rem auto 0.5rem;
+    }
+
     .game-score {
         display: flex;
         flex-flow: row nowrap;
-        margin-left: 20%;
         align-items: center;
+        justify-content: center;
 
         div {
             margin: 0 1rem 0 0;
+            text-align: start;
         }
 
         .player-name {
             font-weight: bold;
+            width: 10rem;
         }
     }
 }
