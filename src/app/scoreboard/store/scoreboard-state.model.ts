@@ -4,6 +4,8 @@ import { Player } from '../models/scoreboard-player';
 
 export interface ScoreboardStateModel {
     games: Game[];
+    players: Player[];
+
     boardGamesMap: Record<number, BoardGame>;
     playersMap: Record<number, Player>;
     gamesMap: Record<number, Game>;

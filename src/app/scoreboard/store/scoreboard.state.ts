@@ -13,6 +13,7 @@ import { RefreshScoreboardData, UpdateBoardGames, UpdateGames, UpdatePlayers } f
     name: 'scoreboard',
     defaults: {
         games: [],
+        players: [],
         boardGamesMap: {},
         playersMap: {},
         gamesMap: {}
@@ -23,6 +24,11 @@ export class ScoreboardState {
     @Selector()
     static games(state: ScoreboardStateModel): Game[] {
         return state.games;
+    }
+
+    @Selector()
+    static players(state: ScoreboardStateModel): Player[] {
+        return state.players;
     }
 
     @Selector()
@@ -77,6 +83,7 @@ export class ScoreboardState {
         }, {});
 
         ctx.patchState({
+            players: action.players,
             playersMap
         });
     }
