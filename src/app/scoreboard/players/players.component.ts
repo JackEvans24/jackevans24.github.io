@@ -1,26 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Store } from '@ngxs/store';
+
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Player } from '../models/scoreboard-player';
-import { ScoreboardService } from '../services/scoreboard.service';
+import { RefreshScoreboardData } from '../store/scoreboard.actions';
+import { ScoreboardState } from '../store/scoreboard.state';
 
 @Component({
   selector: 'app-players',
   templateUrl: './players.component.html',
   styleUrls: ['./players.component.scss']
 })
+@UntilDestroy()
 export class PlayersComponent implements OnInit {
     public players: Player[] = [];
     public lastGameMap: any = {};
 
-    constructor(private service: ScoreboardService) {}
+    constructor(private store: Store) {}
 
     ngOnInit(): void {
-        this.getPlayers();
+        this.getStoreData();
     }
 
-    public async getPlayers(): Promise<void> {
-        this.service.getAllPlayers()
+    public async getStoreData(): Promise<void> {
+        this.store.select(ScoreboardState.players)
+            .pipe(untilDestroyed(this))
             .subscribe(players => this.players = players);
+
+        this.store.dispatch(new RefreshScoreboardData());
     }
 
     observeOnDestroy(): void {}
