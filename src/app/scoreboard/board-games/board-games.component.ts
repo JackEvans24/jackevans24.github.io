@@ -21,10 +21,10 @@ export class BoardGamesComponent implements OnInit {
     constructor(private store: Store) { }
 
     ngOnInit(): void {
-        this.subscribeToData();
+        this.getStoreData();
     }
 
-    private subscribeToData(): void {
+    private getStoreData(): void {
         this.store
             .select(ScoreboardState.boardGamesMap)
             .pipe(untilDestroyed(this))
