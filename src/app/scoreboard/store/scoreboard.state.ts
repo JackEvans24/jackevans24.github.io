@@ -12,6 +12,7 @@ import { RefreshScoreboardData, UpdateBoardGames, UpdateGames, UpdatePlayers } f
 @State<ScoreboardStateModel>({
     name: 'scoreboard',
     defaults: {
+        games: [],
         boardGamesMap: {},
         playersMap: {},
         gamesMap: {}
@@ -20,17 +21,22 @@ import { RefreshScoreboardData, UpdateBoardGames, UpdateGames, UpdatePlayers } f
 @Injectable()
 export class ScoreboardState {
     @Selector()
-    static boardGamesMap(state: ScoreboardStateModel): any {
+    static games(state: ScoreboardStateModel): Game[] {
+        return state.games;
+    }
+
+    @Selector()
+    static boardGamesMap(state: ScoreboardStateModel): Record<number, BoardGame> {
         return state.boardGamesMap;
     }
 
     @Selector()
-    static playersMap(state: ScoreboardStateModel): any {
+    static playersMap(state: ScoreboardStateModel): Record<number, Player> {
         return state.playersMap;
     }
 
     @Selector()
-    static gamesMap(state: ScoreboardStateModel): any {
+    static gamesMap(state: ScoreboardStateModel): Record<number, Game> {
         return state.gamesMap;
     }
 
@@ -83,6 +89,7 @@ export class ScoreboardState {
         }, {});
 
         ctx.patchState({
+            games: action.games,
             gamesMap
         });
     }
