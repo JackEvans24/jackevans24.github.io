@@ -85,7 +85,7 @@ export class AddGameComponent implements OnInit {
 
         this.form.get('gameId')?.setValue(null);
 
-        const dialogRef = this.dialog.open(PromptComponent)
+        this.dialog.open(PromptComponent, { minWidth: '50%', width: '30rem' })
             .afterClosed()
             .subscribe((value: string) => {
                 if ((value || '').length < 1) {
