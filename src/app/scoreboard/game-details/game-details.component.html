@@ -2,7 +2,6 @@
     <ng-container *ngIf="!!game">
         <div class="game-details">
             <div class="game-name">{{ boardGamesMap[game.gameId]?.name || game.gameId }}</div>
-            <div class="game-players">{{ game.players.length }} player{{ game.players.length === 1 ? '' : 's' }}</div>
             <div class="game-date">{{ game.date | date }}</div>
 
             <button mat-mini-fab class="mx-2" color="primary" (click)="toggleExpand()">
@@ -11,9 +10,9 @@
         </div>
         <ng-container *ngIf="expanded">
             <hr>
-            <div class="game-score" *ngFor="let player of game.players">
-                <div class="player-name">{{ playersMap[player.id]?.name || player.id }}</div>
-                <div class="player-score">{{ player.score }}</div>
+            <div class="game-score" *ngFor="let player of game.players | keyvalue">
+                <div class="player-name">{{ playersMap[player.key]?.name || player.key }}</div>
+                <div class="player-score">{{ player.value }}</div>
             </div>
         </ng-container>
     </ng-container>

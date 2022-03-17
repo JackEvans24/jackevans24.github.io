@@ -24,11 +24,12 @@ export class PlayersComponent implements OnInit {
     }
 
     public async getStoreData(): Promise<void> {
-        this.store.select(ScoreboardState.players)
-            .pipe(untilDestroyed(this))
-            .subscribe(players => this.players = players);
+        // TODO: Fix
+        // this.store.select(ScoreboardState.players)
+        //     .pipe(untilDestroyed(this))
+        //     .subscribe(players => this.players = players);
 
-        this.store.dispatch(new RefreshScoreboardData());
+        // this.store.dispatch(new RefreshScoreboardData());
     }
 
     observeOnDestroy(): void {}

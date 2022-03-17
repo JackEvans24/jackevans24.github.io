@@ -3,7 +3,7 @@
 <div class="ta-c">
     <div class="player-container" *ngFor="let player of players">
         <div class="player-name">{{ player.name }}</div>
-        <div class="player-games">{{ player.games.length }} game{{ player.games.length === 1 ? '' : 's' }}</div>
+        <!-- <div class="player-games">{{ player.games.length }} game{{ player.games.length === 1 ? '' : 's' }}</div> -->
         <div class="player-date">Created on {{ player.dateCreated | date }}</div>
     </div>
 </div>

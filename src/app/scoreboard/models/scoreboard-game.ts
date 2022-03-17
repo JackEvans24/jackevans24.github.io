@@ -1,8 +1,5 @@
-import { Score } from './scoreboard-score';
-
 export interface Game {
-    id: number;
-    date: Date;
-    gameId: number;
-    players: Score[];
+    date: Date | string;
+    gameId: string;
+    players: Record<string, number>;
 }

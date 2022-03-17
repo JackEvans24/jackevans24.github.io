@@ -7,17 +7,27 @@ export class RefreshScoreboardData {
     constructor(public force: boolean = false) {}
 }
 
+export class RefreshGames {
+    static readonly type = '[Scoreboard] Refresh Data';
+    constructor(public force: boolean = false) {}
+}
+
 export class UpdateBoardGames {
     static readonly type = '[Scoreboard] Update Board Games';
-    constructor(public boardGames: BoardGame[]) {}
+    constructor(public boardGamesMap: Record<string, BoardGame>) {}
 }
 
 export class UpdatePlayers {
     static readonly type = '[Scoreboard] Update Players';
-    constructor(public players: Player[]) {}
+    constructor(public playersMap: Record<string, Player>) {}
 }
 
 export class UpdateGames {
     static readonly type = '[Scoreboard] Update Games';
-    constructor(public games: Game[]) {}
+    constructor(public gamesMap: Record<string, Game>) {}
+}
+
+export class AddGame {
+    static readonly type = '[Scoreboard] Add Game';
+    constructor(public game: Game) {}
 }
