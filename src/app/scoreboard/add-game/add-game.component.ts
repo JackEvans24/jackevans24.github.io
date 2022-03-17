@@ -14,8 +14,13 @@ import { Game } from '../models/scoreboard-game';
 import { Player } from '../models/scoreboard-player';
 import { AddGame, RefreshScoreboardData } from '../store/scoreboard.actions';
 import { ScoreboardState } from '../store/scoreboard.state';
+import { PromptComponentData } from 'src/app/shared/prompt/prompt.data';
 
 const newGameKey = '#newGame';
+const promptData: PromptComponentData = {
+    title: 'Add Game',
+    label: 'Game Name'
+};
 
 @Component({
     selector: 'app-add-game',
@@ -85,9 +90,10 @@ export class AddGameComponent implements OnInit {
 
         this.form.get('gameId')?.setValue(null);
 
-        this.dialog.open(PromptComponent, { minWidth: '50%', width: '30rem' })
+        this.dialog.open(PromptComponent, { data: promptData, minWidth: '50%', width: '30rem' })
             .afterClosed()
             .subscribe((value: string) => {
+                // TODO: Validate new game is unique
                 if ((value || '').length < 1) {
                     return;
                 }

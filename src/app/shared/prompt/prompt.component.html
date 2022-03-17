@@ -1,4 +1,7 @@
+<div *ngIf="data?.title" class="mat-display-1 mb-1">{{data.title}}</div>
+
 <mat-form-field>
+    <mat-label *ngIf="data?.label">{{ data.label }}</mat-label>
     <input matInput type="text" [(ngModel)]="value">
 </mat-form-field>
 

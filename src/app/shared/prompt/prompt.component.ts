@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+
+import { PromptComponentData } from './prompt.data';
 
 @Component({
     selector: 'app-prompt',
@@ -9,7 +11,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class PromptComponent {
     public value = '';
 
-    constructor(private dialogRef: MatDialogRef<PromptComponent>) { }
+    constructor(private dialogRef: MatDialogRef<PromptComponent>, @Inject(MAT_DIALOG_DATA) public data: PromptComponentData) { }
 
     close(): void {
         this.dialogRef.close();
