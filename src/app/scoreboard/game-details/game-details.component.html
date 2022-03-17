@@ -1,20 +1,19 @@
 <div class="game-container">
-    <ng-container *ngIf="!!game">
-        <div class="game-details">
-            <div class="game-name">{{ boardGamesMap[game.gameId]?.name || game.gameId }}</div>
-            <!-- TODO: Add players overview -->
-            <div class="game-date">{{ game.date | date }}</div>
+    <div class="game-details">
+        <div class="game-name">{{ boardGamesMap[game.gameId]?.name || game.gameId }}</div>
+        <!-- TODO: Add players overview -->
+        <div class="game-date">{{ game.date | date }}</div>
 
-            <button mat-mini-fab class="mx-2" color="primary" (click)="toggleExpand()">
-                <mat-icon>{{ expanded ? 'expand_less' : 'expand_more' }}</mat-icon>
-            </button>
+        <button mat-mini-fab class="mx-2" color="primary" (click)="toggleExpand()">
+            <mat-icon>{{ expanded ? 'expand_less' : 'expand_more' }}</mat-icon>
+        </button>
+    </div>
+
+    <ng-container *ngIf="expanded">
+        <hr>
+        <div class="game-score" *ngFor="let player of game.players | keyvalue">
+            <div class="player-name">{{ playersMap[player.key]?.name || player.key }}</div>
+            <div class="player-score">{{ player.value }}</div>
         </div>
-        <ng-container *ngIf="expanded">
-            <hr>
-            <div class="game-score" *ngFor="let player of game.players | keyvalue">
-                <div class="player-name">{{ playersMap[player.key]?.name || player.key }}</div>
-                <div class="player-score">{{ player.value }}</div>
-            </div>
-        </ng-container>
     </ng-container>
 </div>
