@@ -2,6 +2,7 @@
     <ng-container *ngIf="!!game">
         <div class="game-details">
             <div class="game-name">{{ boardGamesMap[game.gameId]?.name || game.gameId }}</div>
+            <!-- TODO: Add players overview -->
             <div class="game-date">{{ game.date | date }}</div>
 
             <button mat-mini-fab class="mx-2" color="primary" (click)="toggleExpand()">
