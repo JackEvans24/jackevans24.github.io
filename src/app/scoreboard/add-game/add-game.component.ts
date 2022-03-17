@@ -4,12 +4,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSelectChange } from '@angular/material/select';
 import { Router } from '@angular/router';
 
-import { PromptComponent } from 'src/app/shared/prompt/prompt.component';
-import { PromptComponentData } from 'src/app/shared/prompt/prompt.data';
-
 import { Store } from '@ngxs/store';
 
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { AddBoardGameComponent } from '../dialogs/add-board-game/add-board-game.component';
+import { AddBoardGameComponentData } from '../dialogs/add-board-game/add-board-game.data';
 import { AddGameRequest } from '../models/add-game-request';
 import { BoardGame } from '../models/board-game';
 import { Game } from '../models/scoreboard-game';
@@ -18,10 +17,6 @@ import { AddGame, RefreshScoreboardData } from '../store/scoreboard.actions';
 import { ScoreboardState } from '../store/scoreboard.state';
 
 const newGameKey = '#newGame';
-const promptData: PromptComponentData = {
-    title: 'Add Game',
-    label: 'Game Name'
-};
 
 @Component({
     selector: 'app-add-game',
@@ -91,14 +86,15 @@ export class AddGameComponent implements OnInit {
 
         this.form.get('gameId')?.setValue(null);
 
-        this.dialog.open(PromptComponent, { data: promptData, minWidth: '50%', width: '30rem' })
+        const data: AddBoardGameComponentData = {
+            title: 'Add Game',
+            label: 'Game Name',
+            boardGameNames: Object.values(this.boardGamesMap).map(bg => bg.name)
+        };
+
+        this.dialog.open(AddBoardGameComponent, { data, minWidth: '50%', width: '30rem' })
             .afterClosed()
             .subscribe((value: string) => {
-                // TODO: Validate new game is unique
-                if ((value || '').length < 1) {
-                    return;
-                }
-
                 this.boardGamesMap[newGameKey] = { name: value, games: {} };
                 this.form.get('gameId')?.setValue(newGameKey);
             });
