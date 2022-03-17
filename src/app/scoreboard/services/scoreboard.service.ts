@@ -6,6 +6,7 @@ import { filter, map, tap } from 'rxjs/operators';
 import { Store } from '@ngxs/store';
 
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { AddGameRequest } from '../models/add-game-request';
 import { BoardGame } from '../models/board-game';
 import { Game } from '../models/scoreboard-game';
 import { Player } from '../models/scoreboard-player';
@@ -65,27 +66,27 @@ export class ScoreboardService {
             .subscribe();
     }
 
-    public async addGame(newGame: Game, newBoardGame: BoardGame | null = null): Promise<void> {
-        if (newBoardGame !== null) {
-            const addedBoardGame = this.firebase.list(this.boardGamesPath).push(newBoardGame);
+    public async addGame(addGameRequest: AddGameRequest): Promise<void> {
+        if (addGameRequest.boardGame !== null) {
+            const addedBoardGame = this.firebase.list(this.boardGamesPath).push(addGameRequest.boardGame);
             if (addedBoardGame.key === null) {
                 throw new Error('Unable to add new board game');
             }
 
-            newGame.gameId = addedBoardGame.key;
+            addGameRequest.game.gameId = addedBoardGame.key;
         }
 
-        newGame.date = new Date(newGame.date).toISOString();
+        addGameRequest.game.date = new Date(addGameRequest.game.date).toISOString();
 
-        const addedGame = await this.firebase.list(this.gamesPath).push(newGame);
+        const addedGame = await this.firebase.list(this.gamesPath).push(addGameRequest.game);
         if (addedGame.key === null) {
             return;
         }
         const key = addedGame.key;
 
-        this.addKeyToRecord(`${this.boardGamesPath}/${newGame.gameId}/games`, key);
+        this.addKeyToRecord(`${this.boardGamesPath}/${addGameRequest.game.gameId}/games`, key);
 
-        Object.keys(newGame.players).forEach((playerKey: string) =>
+        Object.keys(addGameRequest.game.players).forEach((playerKey: string) =>
             this.addKeyToRecord(`${this.playersPath}/${playerKey}/games`, key)
         );
     }

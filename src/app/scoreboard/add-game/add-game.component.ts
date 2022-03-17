@@ -5,16 +5,17 @@ import { MatSelectChange } from '@angular/material/select';
 import { Router } from '@angular/router';
 
 import { PromptComponent } from 'src/app/shared/prompt/prompt.component';
+import { PromptComponentData } from 'src/app/shared/prompt/prompt.data';
 
 import { Store } from '@ngxs/store';
 
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { AddGameRequest } from '../models/add-game-request';
 import { BoardGame } from '../models/board-game';
 import { Game } from '../models/scoreboard-game';
 import { Player } from '../models/scoreboard-player';
 import { AddGame, RefreshScoreboardData } from '../store/scoreboard.actions';
 import { ScoreboardState } from '../store/scoreboard.state';
-import { PromptComponentData } from 'src/app/shared/prompt/prompt.data';
 
 const newGameKey = '#newGame';
 const promptData: PromptComponentData = {
@@ -128,17 +129,19 @@ export class AddGameComponent implements OnInit {
                     return acc;
                 }, {} as Record<string, number>)
         };
+        const request: AddGameRequest = { game };
 
-        let newBoardGame: BoardGame | null = null;
         if (game.gameId === newGameKey) {
-            newBoardGame = this.boardGamesMap[newGameKey];
+            const newBoardGame = this.boardGamesMap[newGameKey];
             if ((newBoardGame || null) === null) {
                 this.error = 'Error adding new board game, please refresh and try again';
                 return;
             }
+
+            request.boardGame = newBoardGame;
         }
 
-        this.store.dispatch(new AddGame(game, newBoardGame))
+        this.store.dispatch(new AddGame(request))
             .pipe(untilDestroyed(this))
             .subscribe(() => this.router.navigateByUrl('scoreboard/games'));
     }

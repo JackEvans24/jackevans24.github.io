@@ -1,3 +1,4 @@
+import { AddGameRequest } from '../models/add-game-request';
 import { BoardGame } from '../models/board-game';
 import { Game } from '../models/scoreboard-game';
 import { Player } from '../models/scoreboard-player';
@@ -29,5 +30,5 @@ export class UpdateGames {
 
 export class AddGame {
     static readonly type = '[Scoreboard] Add Game';
-    constructor(public game: Game, public newBoardGame: BoardGame | null = null) {}
+    constructor(public addGameRequest: AddGameRequest) {}
 }
