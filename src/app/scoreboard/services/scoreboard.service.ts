@@ -65,22 +65,29 @@ export class ScoreboardService {
             .subscribe();
     }
 
-    public addGame(newGame: Game): void {
+    public async addGame(newGame: Game, newBoardGame: BoardGame | null = null): Promise<void> {
+        if (newBoardGame !== null) {
+            const addedBoardGame = this.firebase.list(this.boardGamesPath).push(newBoardGame);
+            if (addedBoardGame.key === null) {
+                throw new Error('Unable to add new board game');
+            }
+
+            newGame.gameId = addedBoardGame.key;
+        }
+
         newGame.date = new Date(newGame.date).toISOString();
 
-        this.firebase.list(this.gamesPath).push(newGame)
-            .then(addedGame => {
-                if (addedGame.key === null) {
-                    return;
-                }
-                const key = addedGame.key;
+        const addedGame = await this.firebase.list(this.gamesPath).push(newGame);
+        if (addedGame.key === null) {
+            return;
+        }
+        const key = addedGame.key;
 
-                this.addKeyToRecord(`${this.boardGamesPath}/${newGame.gameId}/games`, key);
+        this.addKeyToRecord(`${this.boardGamesPath}/${newGame.gameId}/games`, key);
 
-                Object.keys(newGame.players).forEach((playerKey: string) =>
-                    this.addKeyToRecord(`${this.playersPath}/${playerKey}/games`, key)
-                );
-            });
+        Object.keys(newGame.players).forEach((playerKey: string) =>
+            this.addKeyToRecord(`${this.playersPath}/${playerKey}/games`, key)
+        );
     }
 
     // ** HELPERS **

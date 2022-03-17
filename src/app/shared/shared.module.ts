@@ -1,26 +1,29 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProjectPreviewComponent } from './project-preview/project-preview.component';
-import { MaterialModule } from './material.module';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { FirebaseModule } from './firebase.module';
-import { ReactiveFormsModule } from '@angular/forms';
-
-
+import { MaterialModule } from './material.module';
+import { ProjectPreviewComponent } from './project-preview/project-preview.component';
+import { PromptComponent } from './prompt/prompt.component';
 
 @NgModule({
   declarations: [
-    ProjectPreviewComponent
+    ProjectPreviewComponent,
+    PromptComponent
   ],
   imports: [
     CommonModule,
     FirebaseModule,
     MaterialModule,
+    FormsModule,
     ReactiveFormsModule
   ],
   exports: [
     ProjectPreviewComponent,
     FirebaseModule,
     MaterialModule,
+    FormsModule,
     ReactiveFormsModule
   ]
 })

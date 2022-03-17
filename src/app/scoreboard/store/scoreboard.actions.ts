@@ -29,5 +29,5 @@ export class UpdateGames {
 
 export class AddGame {
     static readonly type = '[Scoreboard] Add Game';
-    constructor(public game: Game) {}
+    constructor(public game: Game, public newBoardGame: BoardGame | null = null) {}
 }

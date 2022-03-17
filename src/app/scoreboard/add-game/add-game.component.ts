@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSelectChange } from '@angular/material/select';
 import { Router } from '@angular/router';
+
+import { PromptComponent } from 'src/app/shared/prompt/prompt.component';
 
 import { Store } from '@ngxs/store';
 
@@ -10,6 +14,8 @@ import { Game } from '../models/scoreboard-game';
 import { Player } from '../models/scoreboard-player';
 import { AddGame, RefreshScoreboardData } from '../store/scoreboard.actions';
 import { ScoreboardState } from '../store/scoreboard.state';
+
+const newGameKey = '#newGame';
 
 @Component({
     selector: 'app-add-game',
@@ -25,12 +31,14 @@ export class AddGameComponent implements OnInit {
     public error = '';
     public maxDate = new Date();
 
+    public newGameKey = newGameKey;
+
     get selectedPlayers(): FormArray {
         // tslint:disable-next-line:no-string-literal
         return (this.form.controls['players'] as FormArray);
     }
 
-    constructor(private store: Store, private fb: FormBuilder, private router: Router) {
+    constructor(private store: Store, private fb: FormBuilder, private router: Router, private dialog: MatDialog) {
         this.form = this.createForm();
         this.addPlayer();
     }
@@ -70,6 +78,25 @@ export class AddGameComponent implements OnInit {
         this.selectedPlayers.push(player);
     }
 
+    public onGameSelected(selectionChange: MatSelectChange): void {
+        if (selectionChange.value !== newGameKey) {
+            return;
+        }
+
+        this.form.get('gameId')?.setValue(null);
+
+        const dialogRef = this.dialog.open(PromptComponent)
+            .afterClosed()
+            .subscribe((value: string) => {
+                if ((value || '').length < 1) {
+                    return;
+                }
+
+                this.boardGamesMap[newGameKey] = { name: value, games: {} };
+                this.form.get('gameId')?.setValue(newGameKey);
+            });
+    }
+
     public playerIsSelected(thisControlIndex: number, playerId: string): boolean {
         const thisControl = this.selectedPlayers.at(thisControlIndex);
         return this.selectedPlayers.controls.some(control => control !== thisControl && control.get('id')?.value === playerId);
@@ -96,7 +123,16 @@ export class AddGameComponent implements OnInit {
                 }, {} as Record<string, number>)
         };
 
-        this.store.dispatch(new AddGame(game))
+        let newBoardGame: BoardGame | null = null;
+        if (game.gameId === newGameKey) {
+            newBoardGame = this.boardGamesMap[newGameKey];
+            if ((newBoardGame || null) === null) {
+                this.error = 'Error adding new board game, please refresh and try again';
+                return;
+            }
+        }
+
+        this.store.dispatch(new AddGame(game, newBoardGame))
             .pipe(untilDestroyed(this))
             .subscribe(() => this.router.navigateByUrl('scoreboard/games'));
     }

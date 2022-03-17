@@ -1,0 +1,9 @@
+<mat-form-field>
+    <input matInput type="text" [(ngModel)]="value">
+</mat-form-field>
+
+<div class="flex">
+    <button mat-flat-button color="warn" (click)="close()">Cancel</button>
+    <span class="flex-spacer"></span>
+    <button mat-flat-button color="primary" (click)="confirm()">Confirm</button>
+</div>

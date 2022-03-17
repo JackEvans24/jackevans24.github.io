@@ -1,3 +1,6 @@
+@import '~@angular/material/theming';
+@import 'material-palettes';
+
 form {
     display: flex;
     flex-flow: column nowrap;
@@ -34,6 +37,10 @@ form {
         max-width: 10rem;
         margin: 0 auto;
     }
+}
+
+mat-option.new-game-option {
+    background-color: mat-color($mat-primary-green, 100);
 }
 
 .warn {

@@ -81,8 +81,7 @@ export class ScoreboardState {
     }
 
     @Action(AddGame)
-    addGame(ctx: StateContext<ScoreboardStateModel>, { game }: AddGame): void {
-        this.service.addGame(game);
-        this.refreshGames(ctx, { force: true });
+    addGame(ctx: StateContext<ScoreboardStateModel>, { game, newBoardGame }: AddGame): void {
+        this.service.addGame(game, newBoardGame).then(() => this.refreshData(ctx, { force: true }));
     }
 }
