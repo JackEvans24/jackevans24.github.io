@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ProjectPreviewComponent } from './project-preview/project-preview.component';
 import { MaterialModule } from './material.module';
 import { FirebaseModule } from './firebase.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -13,12 +14,14 @@ import { FirebaseModule } from './firebase.module';
   imports: [
     CommonModule,
     FirebaseModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ],
   exports: [
     ProjectPreviewComponent,
     FirebaseModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }
