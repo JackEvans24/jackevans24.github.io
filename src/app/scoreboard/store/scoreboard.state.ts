@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 
 import { Action, Selector, State, StateContext } from '@ngxs/store';
 
-import { BoardGame } from '../models/board-game';
-import { Game } from '../models/scoreboard-game';
-import { Player } from '../models/scoreboard-player';
+import { BoardGame, BoardGameWithKey } from '../models/board-game';
+import { Identifyable } from '../models/identifyable';
+import { Game, GameWithKey } from '../models/scoreboard-game';
+import { Player, PlayerWithKey } from '../models/scoreboard-player';
 import { ScoreboardService } from '../services/scoreboard.service';
 import { ScoreboardStateModel } from './scoreboard-state.model';
 import { AddGame, RefreshGames, RefreshScoreboardData, UpdateBoardGames, UpdateGames, UpdatePlayers } from './scoreboard.actions';
@@ -25,13 +26,37 @@ export class ScoreboardState {
     }
 
     @Selector()
+    static boardGamesArray(state: ScoreboardStateModel): BoardGameWithKey[] {
+        return ScoreboardState.mapToIdentifyableArray(state.boardGamesMap);
+    }
+
+    @Selector()
     static playersMap(state: ScoreboardStateModel): Record<string, Player> {
         return state.playersMap;
     }
 
     @Selector()
+    static playersArray(state: ScoreboardStateModel): PlayerWithKey[] {
+        return ScoreboardState.mapToIdentifyableArray(state.playersMap);
+    }
+
+    @Selector()
     static gamesMap(state: ScoreboardStateModel): Record<string, Game> {
         return state.gamesMap;
+    }
+
+    @Selector()
+    static gamesArray(state: ScoreboardStateModel): GameWithKey[] {
+        return ScoreboardState.mapToIdentifyableArray(state.gamesMap);
+    }
+
+    private static mapToIdentifyableArray<T, U extends T & Identifyable>(map: Record<string, T>): U[] {
+        return Object.keys(map)
+            .map(key => {
+                const mapItem = map[key];
+                const item = { key, ...mapItem };
+                return item as U;
+            });
     }
 
     constructor(private service: ScoreboardService) {}
