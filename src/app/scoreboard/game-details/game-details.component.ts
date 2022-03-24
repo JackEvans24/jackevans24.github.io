@@ -15,9 +15,11 @@ import { ScoreboardState } from '../store/scoreboard.state';
 })
 @UntilDestroy()
 export class GameDetailsComponent implements OnInit {
-    @Input() public game?: Game;
-    public boardGamesMap: Record<number, BoardGame> = {};
-    public playersMap: Record<number, Player> = {};
+    @Input() public key!: string;
+    @Input() public game!: Game;
+
+    public boardGamesMap: Record<string, BoardGame> = {};
+    public playersMap: Record<string, Player> = {};
     public expanded = false;
 
     constructor(private store: Store) {}

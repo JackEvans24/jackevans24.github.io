@@ -15,8 +15,8 @@ import { ScoreboardState } from '../store/scoreboard.state';
 })
 @UntilDestroy()
 export class BoardGamesComponent implements OnInit {
-    public games: Game[] = [];
-    public boardGameMap: Record<number, BoardGame> = {};
+    public gamesMap: Record<string, Game> = {};
+    public boardGameMap: Record<string, BoardGame> = {};
 
     constructor(private store: Store) { }
 
@@ -31,9 +31,9 @@ export class BoardGamesComponent implements OnInit {
             .subscribe(map => this.boardGameMap = map);
 
         this.store
-            .select(ScoreboardState.games)
+            .select(ScoreboardState.gamesMap)
             .pipe(untilDestroyed(this))
-            .subscribe(games => this.games = games);
+            .subscribe(gamesMap => this.gamesMap = gamesMap);
 
         this.store.dispatch(new RefreshScoreboardData());
     }

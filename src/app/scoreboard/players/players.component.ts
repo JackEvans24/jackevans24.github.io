@@ -14,8 +14,7 @@ import { ScoreboardState } from '../store/scoreboard.state';
 })
 @UntilDestroy()
 export class PlayersComponent implements OnInit {
-    public players: Player[] = [];
-    public lastGameMap: any = {};
+    public playersMap: Record<string, Player> = {};
 
     constructor(private store: Store) {}
 
@@ -24,9 +23,9 @@ export class PlayersComponent implements OnInit {
     }
 
     public async getStoreData(): Promise<void> {
-        this.store.select(ScoreboardState.players)
+        this.store.select(ScoreboardState.playersMap)
             .pipe(untilDestroyed(this))
-            .subscribe(players => this.players = players);
+            .subscribe(playersMap => this.playersMap = playersMap);
 
         this.store.dispatch(new RefreshScoreboardData());
     }

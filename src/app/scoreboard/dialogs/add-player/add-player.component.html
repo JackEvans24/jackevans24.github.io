@@ -1,0 +1,13 @@
+<div *ngIf="data?.title" class="mat-display-1 mb-1">{{data.title}}</div>
+
+<mat-form-field>
+    <mat-label *ngIf="data?.label">{{ data.label }}</mat-label>
+    <input matInput type="text" [(ngModel)]="value">
+    <mat-hint class="warn" *ngIf="error?.length">{{ error }}</mat-hint>
+</mat-form-field>
+
+<div class="flex">
+    <button mat-flat-button color="warn" (click)="close()">Cancel</button>
+    <span class="flex-spacer"></span>
+    <button mat-flat-button color="primary" (click)="confirm()">Confirm</button>
+</div>

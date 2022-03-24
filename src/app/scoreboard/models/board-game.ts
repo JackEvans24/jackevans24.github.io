@@ -1,5 +1,4 @@
 export interface BoardGame {
-    id: number;
     name: string;
-    games: any[];
+    games: Record<string, boolean>;
 }

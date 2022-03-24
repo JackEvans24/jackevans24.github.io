@@ -1,6 +1,7 @@
 export interface Player {
-    id: number;
     name: string;
     dateCreated: Date;
-    games: any[];
+    games: Record<string, boolean>;
 }
+
+export const newPlayerKey = '#newPlayer';

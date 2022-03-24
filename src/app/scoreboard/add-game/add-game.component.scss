@@ -1,0 +1,49 @@
+@import '~@angular/material/theming';
+@import 'material-palettes';
+
+form {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 1rem;
+    margin: 0 auto;
+    max-width: 30rem;
+
+    & mat-form-field {
+        width: 100%;
+    }
+
+    .player-score-container {
+        display: flex;
+        flex-flow: row nowrap;
+
+        &>div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        div.player-inputs {
+            flex-grow: 4;
+        }
+
+        div.button-container {
+            flex-grow: 1;
+            padding: 0.5rem;
+        }
+    }
+
+    .add-player-button {
+        max-width: 10rem;
+        margin: 0 auto;
+    }
+}
+
+mat-option.new-game-option {
+    background-color: mat-color($mat-primary-green, 100);
+}
+
+.warn {
+    color: red;
+    font-weight: bold;
+}
