@@ -9,10 +9,12 @@ import { Store } from '@ngxs/store';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { AddBoardGameComponent } from '../dialogs/add-board-game/add-board-game.component';
 import { AddBoardGameComponentData } from '../dialogs/add-board-game/add-board-game.data';
+import { AddPlayerComponent } from '../dialogs/add-player/add-player.component';
+import { AddPlayerComponentData } from '../dialogs/add-player/add-player.data';
 import { AddGameRequest } from '../models/add-game-request';
 import { BoardGame } from '../models/board-game';
 import { Game } from '../models/scoreboard-game';
-import { Player } from '../models/scoreboard-player';
+import { newPlayerKey, Player } from '../models/scoreboard-player';
 import { AddGame, RefreshScoreboardData } from '../store/scoreboard.actions';
 import { ScoreboardState } from '../store/scoreboard.state';
 
@@ -33,6 +35,7 @@ export class AddGameComponent implements OnInit {
     public maxDate = new Date();
 
     public newGameKey = newGameKey;
+    public newPlayerKey = newPlayerKey;
 
     get selectedPlayers(): FormArray {
         // tslint:disable-next-line:no-string-literal
@@ -100,6 +103,35 @@ export class AddGameComponent implements OnInit {
             });
     }
 
+    public onPlayerSelected(selectionChange: MatSelectChange, index: number): void {
+        if (selectionChange.value !== newPlayerKey) {
+            return;
+        }
+
+        const playerControl = this.selectedPlayers.controls[index];
+        if (playerControl === null) {
+            return;
+        }
+
+        playerControl.get('id')?.setValue(null);
+
+        const data: AddPlayerComponentData = {
+            title: 'Add Player',
+            label: 'Player Name',
+            playerNames: Object.keys(this.playersMap)
+                .filter(key => key.indexOf(newPlayerKey) !== 0)
+                .map(key => this.playersMap[key].name)
+        };
+
+        this.dialog.open(AddPlayerComponent, { data, minWidth: '50%', width: '30rem' })
+            .afterClosed()
+            .subscribe((value: string) => {
+                const key = newPlayerKey + value;
+                this.playersMap[key] = { name: value, dateCreated: new Date(), games: {} };
+                playerControl.get('id')?.setValue(key);
+            });
+    }
+
     public playerIsSelected(thisControlIndex: number, playerId: string): boolean {
         const thisControl = this.selectedPlayers.at(thisControlIndex);
         return this.selectedPlayers.controls.some(control => control !== thisControl && control.get('id')?.value === playerId);
@@ -125,7 +157,7 @@ export class AddGameComponent implements OnInit {
                     return acc;
                 }, {} as Record<string, number>)
         };
-        const request: AddGameRequest = { game };
+        const request: AddGameRequest = { game, players: {} };
 
         if (game.gameId === newGameKey) {
             const newBoardGame = this.boardGamesMap[newGameKey];
@@ -136,6 +168,18 @@ export class AddGameComponent implements OnInit {
 
             request.boardGame = newBoardGame;
         }
+
+        Object.keys(game.players)
+            .filter(playerKey => playerKey.indexOf(newPlayerKey) === 0)
+            .forEach(playerKey => {
+                const newPlayer = this.playersMap[playerKey];
+                if ((newPlayer || null) === null) {
+                    this.error = 'Error adding new player, please refresh and try again';
+                    return;
+                }
+
+                request.players[playerKey] = newPlayer;
+            });
 
         this.store.dispatch(new AddGame(request))
             .pipe(untilDestroyed(this))

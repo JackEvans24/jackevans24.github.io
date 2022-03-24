@@ -9,7 +9,7 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { AddGameRequest } from '../models/add-game-request';
 import { BoardGame } from '../models/board-game';
 import { Game } from '../models/scoreboard-game';
-import { Player } from '../models/scoreboard-player';
+import { newPlayerKey, Player } from '../models/scoreboard-player';
 import { UpdateBoardGames, UpdateGames, UpdatePlayers } from '../store/scoreboard.actions';
 
 @UntilDestroy()
@@ -67,14 +67,8 @@ export class ScoreboardService {
     }
 
     public async addGame(addGameRequest: AddGameRequest): Promise<void> {
-        if (addGameRequest.boardGame !== null) {
-            const addedBoardGame = this.firebase.list(this.boardGamesPath).push(addGameRequest.boardGame);
-            if (addedBoardGame.key === null) {
-                throw new Error('Unable to add new board game');
-            }
-
-            addGameRequest.game.gameId = addedBoardGame.key;
-        }
+        this.addNewBoardGame(addGameRequest);
+        this.addNewPlayers(addGameRequest);
 
         addGameRequest.game.date = new Date(addGameRequest.game.date).toISOString();
 
@@ -92,6 +86,43 @@ export class ScoreboardService {
     }
 
     // ** HELPERS **
+
+    private addNewBoardGame(request: AddGameRequest): void {
+        if (!request.boardGame) {
+            return;
+        }
+
+        const addedBoardGame = this.firebase.list(this.boardGamesPath).push(request.boardGame);
+        if (addedBoardGame.key === null) {
+            throw new Error('Unable to add new board game');
+        }
+
+        request.game.gameId = addedBoardGame.key;
+    }
+
+    private addNewPlayers(request: AddGameRequest): void {
+        if (Object.keys(request.players).length === 0) {
+            return;
+        }
+
+        Object.keys(request.game.players)
+            .filter(key => key.indexOf(newPlayerKey) === 0)
+            .forEach(key => {
+                const player = request.players[key];
+                if (!player) {
+                    throw new Error('New player not found in records');
+                }
+
+                const addedPlayer = this.firebase.list(this.playersPath).push(player);
+                if (addedPlayer.key === null) {
+                    throw new Error('Unable to add new player');
+                }
+
+                const scoreValue = request.game.players[key];
+                delete request.game.players[key];
+                request.game.players[addedPlayer.key] = scoreValue;
+            });
+    }
 
     private snapshotToRecord<T>(
         snapshots: SnapshotAction<T>[],

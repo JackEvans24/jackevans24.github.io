@@ -3,3 +3,5 @@ export interface Player {
     dateCreated: Date;
     games: Record<string, boolean>;
 }
+
+export const newPlayerKey = '#newPlayer';

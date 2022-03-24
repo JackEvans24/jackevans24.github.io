@@ -25,10 +25,11 @@
                 <div class="player-inputs">
                     <mat-form-field class="player-name">
                         <mat-label>Player</mat-label>
-                        <mat-select formControlName="id">
+                        <mat-select formControlName="id" (selectionChange)="onPlayerSelected($event, i)">
                             <mat-option *ngFor="let player of playersMap | keyvalue" [value]="player.key" [disabled]="playerIsSelected(i, player.key)">
                                 {{ player.value.name }}
                             </mat-option>
+                            <mat-option class="new-game-option" [value]="newPlayerKey"><mat-icon>add</mat-icon> New Player</mat-option>
                         </mat-select>
                     </mat-form-field>
 
