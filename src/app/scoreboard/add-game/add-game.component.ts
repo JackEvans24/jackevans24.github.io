@@ -102,6 +102,7 @@ export class AddGameComponent implements OnInit {
                     return;
                 }
 
+                this.boardGames = this.boardGames.filter(game => game.key !== newGameKey);
                 this.boardGames.push({ key: newGameKey, name: value, games: {} });
                 this.form.get('gameId')?.setValue(newGameKey);
             });
@@ -122,9 +123,7 @@ export class AddGameComponent implements OnInit {
         const data: AddPlayerComponentData = {
             title: 'Add Player',
             label: 'Player Name',
-            playerNames: this.players
-                .filter(player => player.key.indexOf(newPlayerKey) !== 0)
-                .map(player => player.name)
+            playerNames: this.players.map(player => player.name)
         };
 
         this.dialog.open(AddPlayerComponent, { data, minWidth: '50%', width: '30rem' })
