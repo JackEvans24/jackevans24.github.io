@@ -12,9 +12,9 @@ import { AddBoardGameComponentData } from '../dialogs/add-board-game/add-board-g
 import { AddPlayerComponent } from '../dialogs/add-player/add-player.component';
 import { AddPlayerComponentData } from '../dialogs/add-player/add-player.data';
 import { AddGameRequest } from '../models/add-game-request';
-import { BoardGame } from '../models/board-game';
+import { BoardGameWithKey } from '../models/board-game';
 import { Game } from '../models/scoreboard-game';
-import { newPlayerKey, Player } from '../models/scoreboard-player';
+import { newPlayerKey, Player, PlayerWithKey } from '../models/scoreboard-player';
 import { AddGame, RefreshScoreboardData } from '../store/scoreboard.actions';
 import { ScoreboardState } from '../store/scoreboard.state';
 
@@ -27,8 +27,8 @@ const newGameKey = '#newGame';
 })
 @UntilDestroy()
 export class AddGameComponent implements OnInit {
-    public boardGamesMap: Record<string, BoardGame> = {};
-    public playersMap: Record<string, Player> = {};
+    public boardGames: BoardGameWithKey[] = [];
+    public players: PlayerWithKey[] = [];
 
     public form: FormGroup;
     public error = '';
@@ -61,14 +61,14 @@ export class AddGameComponent implements OnInit {
 
     private getStoreData(): void {
         this.store
-            .select(ScoreboardState.boardGamesMap)
+            .select(ScoreboardState.boardGamesArray)
             .pipe(untilDestroyed(this))
-            .subscribe(boardGamesMap => this.boardGamesMap = boardGamesMap);
+            .subscribe(boardGames => this.boardGames = boardGames.sort((a, b) => a.name > b.name ? 1 : -1));
 
         this.store
-            .select(ScoreboardState.playersMap)
+            .select(ScoreboardState.playersArray)
             .pipe(untilDestroyed(this))
-            .subscribe(playersMap => this.playersMap = playersMap);
+            .subscribe(players => this.players = players.sort((a, b) => a.name > b.name ? 1 : -1));
 
         this.store.dispatch(new RefreshScoreboardData());
     }
@@ -92,13 +92,17 @@ export class AddGameComponent implements OnInit {
         const data: AddBoardGameComponentData = {
             title: 'Add Game',
             label: 'Game Name',
-            boardGameNames: Object.values(this.boardGamesMap).map(bg => bg.name)
+            boardGameNames: Object.values(this.boardGames).map(bg => bg.name)
         };
 
         this.dialog.open(AddBoardGameComponent, { data, minWidth: '50%', width: '30rem' })
             .afterClosed()
             .subscribe((value: string) => {
-                this.boardGamesMap[newGameKey] = { name: value, games: {} };
+                if (!(value || '').length) {
+                    return;
+                }
+
+                this.boardGames.push({ key: newGameKey, name: value, games: {} });
                 this.form.get('gameId')?.setValue(newGameKey);
             });
     }
@@ -118,16 +122,20 @@ export class AddGameComponent implements OnInit {
         const data: AddPlayerComponentData = {
             title: 'Add Player',
             label: 'Player Name',
-            playerNames: Object.keys(this.playersMap)
-                .filter(key => key.indexOf(newPlayerKey) !== 0)
-                .map(key => this.playersMap[key].name)
+            playerNames: this.players
+                .filter(player => player.key.indexOf(newPlayerKey) !== 0)
+                .map(player => player.name)
         };
 
         this.dialog.open(AddPlayerComponent, { data, minWidth: '50%', width: '30rem' })
             .afterClosed()
             .subscribe((value: string) => {
+                if (!(value || '').length) {
+                    return;
+                }
+
                 const key = newPlayerKey + value;
-                this.playersMap[key] = { name: value, dateCreated: new Date(), games: {} };
+                this.players.push({ key, name: value, dateCreated: new Date(), games: {} });
                 playerControl.get('id')?.setValue(key);
             });
     }
@@ -160,7 +168,7 @@ export class AddGameComponent implements OnInit {
         const request: AddGameRequest = { game, players: {} };
 
         if (game.gameId === newGameKey) {
-            const newBoardGame = this.boardGamesMap[newGameKey];
+            const newBoardGame = this.boardGames.find(boardGame => boardGame.key === newGameKey);
             if ((newBoardGame || null) === null) {
                 this.error = 'Error adding new board game, please refresh and try again';
                 return;
@@ -172,13 +180,13 @@ export class AddGameComponent implements OnInit {
         Object.keys(game.players)
             .filter(playerKey => playerKey.indexOf(newPlayerKey) === 0)
             .forEach(playerKey => {
-                const newPlayer = this.playersMap[playerKey];
+                const newPlayer = this.players.find(player => player.key === playerKey);
                 if ((newPlayer || null) === null) {
                     this.error = 'Error adding new player, please refresh and try again';
                     return;
                 }
 
-                request.players[playerKey] = newPlayer;
+                request.players[playerKey] = newPlayer as Player;
             });
 
         this.store.dispatch(new AddGame(request))
