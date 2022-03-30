@@ -3,8 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngxs/store';
 
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { BoardGame } from '../models/board-game';
-import { Game } from '../models/scoreboard-game';
+import { GameWithKey } from '../models/scoreboard-game';
 import { RefreshScoreboardData } from '../store/scoreboard.actions';
 import { ScoreboardState } from '../store/scoreboard.state';
 
@@ -15,8 +14,7 @@ import { ScoreboardState } from '../store/scoreboard.state';
 })
 @UntilDestroy()
 export class BoardGamesComponent implements OnInit {
-    public gamesMap: Record<string, Game> = {};
-    public boardGameMap: Record<string, BoardGame> = {};
+    public games: GameWithKey[] = [];
 
     constructor(private store: Store) { }
 
@@ -26,14 +24,9 @@ export class BoardGamesComponent implements OnInit {
 
     private getStoreData(): void {
         this.store
-            .select(ScoreboardState.boardGamesMap)
+            .select(ScoreboardState.gamesArray)
             .pipe(untilDestroyed(this))
-            .subscribe(map => this.boardGameMap = map);
-
-        this.store
-            .select(ScoreboardState.gamesMap)
-            .pipe(untilDestroyed(this))
-            .subscribe(gamesMap => this.gamesMap = gamesMap);
+            .subscribe(games => this.games = games.sort((a, b) => a.date > b.date ? -1 : 1));
 
         this.store.dispatch(new RefreshScoreboardData());
     }

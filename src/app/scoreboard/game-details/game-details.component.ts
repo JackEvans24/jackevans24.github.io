@@ -5,7 +5,7 @@ import { Store } from '@ngxs/store';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { BoardGame } from '../models/board-game';
 import { Game } from '../models/scoreboard-game';
-import { Player } from '../models/scoreboard-player';
+import { Player, PlayerScore } from '../models/scoreboard-player';
 import { ScoreboardState } from '../store/scoreboard.state';
 
 @Component({
@@ -17,6 +17,8 @@ import { ScoreboardState } from '../store/scoreboard.state';
 export class GameDetailsComponent implements OnInit {
     @Input() public key!: string;
     @Input() public game!: Game;
+
+    public gamePlayers: PlayerScore[] = [];
 
     public boardGamesMap: Record<string, BoardGame> = {};
     public playersMap: Record<string, Player> = {};
@@ -32,12 +34,26 @@ export class GameDetailsComponent implements OnInit {
         this.store
             .select(ScoreboardState.playersMap)
             .pipe(untilDestroyed(this))
-            .subscribe(map => this.playersMap = map);
+            .subscribe(map => {
+                this.playersMap = map;
+                this.updateGame();
+            });
 
         this.store
             .select(ScoreboardState.boardGamesMap)
             .pipe(untilDestroyed(this))
             .subscribe(map => this.boardGamesMap = map);
+    }
+
+    private updateGame(): void {
+        this.gamePlayers = Object.keys(this.game.players)
+            .map<PlayerScore>(playerKey => {
+                return {
+                    name: this.playersMap[playerKey]?.name,
+                    score: this.game.players[playerKey]
+                };
+            })
+            .sort((a, b) => b.score - a.score);
     }
 
     public toggleExpand(): void {

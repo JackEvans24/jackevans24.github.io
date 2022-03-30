@@ -1,5 +1,4 @@
 <div class="ta-c mt-1">
     <a mat-flat-button class="mb-1" color="primary" routerLink="../games/0">Add new game<mat-icon>add</mat-icon></a>
-
-    <app-game-details *ngFor="let game of gamesMap | keyvalue" [key]="game.key" [game]="game.value"></app-game-details>
+    <app-game-details *ngFor="let game of games" [key]="game.key" [game]="game"></app-game-details>
 </div>

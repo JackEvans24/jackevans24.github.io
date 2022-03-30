@@ -11,9 +11,19 @@
 
     <ng-container *ngIf="expanded">
         <hr>
-        <div class="game-score" *ngFor="let player of game.players | keyvalue">
-            <div class="player-name">{{ playersMap[player.key]?.name || player.key }}</div>
-            <div class="player-score">{{ player.value }}</div>
-        </div>
+
+        <ng-container *ngIf="gamePlayers?.length; else defaultPlayersList">
+            <div class="game-score" *ngFor="let player of gamePlayers">
+                <div class="player-name">{{ player.name }}</div>
+                <div class="player-score">{{ player.score }}</div>
+            </div>
+        </ng-container>
+
+        <ng-template #defaultPlayersList>
+            <div class="game-score" *ngFor="let player of game.players | keyvalue">
+                <div class="player-name">{{ playersMap[player.key]?.name || player.key }}</div>
+                <div class="player-score">{{ player.value }}</div>
+            </div>
+        </ng-template>
     </ng-container>
 </div>

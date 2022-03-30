@@ -10,7 +10,7 @@
 
     .game-details {
         display: flex;
-        flex-flow: row nowrap;
+        flex-flow: row;
         width: 100%;
         justify-content: space-around;
         align-items: center;
@@ -21,6 +21,9 @@
 
             .game-name {
                 font-weight: bold;
+                flex-grow: 1;
+                text-align: start;
+                margin-left: 5%;
             }
 
             .game-date {
@@ -30,7 +33,7 @@
     }
 
     hr {
-        width: 80%;
+        width: 90%;
         margin: 1rem auto 0.5rem;
     }
 
@@ -38,10 +41,11 @@
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
+        padding: 0 10%;
 
         div {
-            margin: 0 1rem 0 0;
+            margin: 0.5rem 0 0;
             text-align: start;
         }
 

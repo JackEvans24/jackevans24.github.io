@@ -3,7 +3,7 @@
     <mat-form-field>
         <mat-label>Game</mat-label>
         <mat-select formControlName="gameId" (selectionChange)="onGameSelected($event)">
-            <mat-option *ngFor="let boardGame of boardGamesMap | keyvalue" [value]="boardGame.key">{{ boardGame.value.name }}</mat-option>
+            <mat-option *ngFor="let boardGame of boardGames" [value]="boardGame.key">{{ boardGame.name }}</mat-option>
             <mat-option class="new-game-option" [value]="newGameKey"><mat-icon>add</mat-icon> New Game</mat-option>
         </mat-select>
     </mat-form-field>
@@ -26,8 +26,8 @@
                     <mat-form-field class="player-name">
                         <mat-label>Player</mat-label>
                         <mat-select formControlName="id" (selectionChange)="onPlayerSelected($event, i)">
-                            <mat-option *ngFor="let player of playersMap | keyvalue" [value]="player.key" [disabled]="playerIsSelected(i, player.key)">
-                                {{ player.value.name }}
+                            <mat-option *ngFor="let player of players" [value]="player.key" [disabled]="playerIsSelected(i, player.key)">
+                                {{ player.name }}
                             </mat-option>
                             <mat-option class="new-game-option" [value]="newPlayerKey"><mat-icon>add</mat-icon> New Player</mat-option>
                         </mat-select>
