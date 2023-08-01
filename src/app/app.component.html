@@ -1,11 +1,14 @@
 <mat-sidenav-container class="example-container">
-    <mat-sidenav #drawer mode="over">
+    <mat-sidenav #drawer
+                 mode="over">
         <ng-container *ngTemplateOutlet="menuItems"></ng-container>
     </mat-sidenav>
 
     <mat-toolbar color="primary">
         <div class="mobile-spacer">
-            <button mat-button class="menu-button" (click)="drawer.toggle()">
+            <button mat-button
+                    class="menu-button"
+                    (click)="drawer.toggle()">
                 <mat-icon>menu</mat-icon>
             </button>
         </div>
@@ -19,19 +22,30 @@
 </mat-sidenav-container>
 
 <ng-template #menuItems>
-    <a mat-button class="home-button" routerLink="/">Jevans' Space</a>
+    <a mat-button
+       class="menu-item home-button"
+       routerLink="/">Jevans' Space</a>
 
-    <a mat-button routerLink="/projects" routerLinkActive="active-link">
-        <mat-icon>science</mat-icon>
-        Projects
-    </a>
-
-    <a mat-button routerLink="/games" routerLinkActive="active-link">
+    <a mat-button
+       class="menu-item"
+       routerLink="/games"
+       routerLinkActive="active-link">
         <mat-icon>sports_esports</mat-icon>
         Games
     </a>
 
-    <a mat-button routerLink="/merch" routerLinkActive="active-link">
+    <a mat-button
+       class="menu-item"
+       routerLink="/projects"
+       routerLinkActive="active-link">
+        <mat-icon>science</mat-icon>
+        Projects
+    </a>
+
+    <a mat-button
+       class="menu-item"
+       routerLink="/merch"
+       routerLinkActive="active-link">
         <mat-icon>storefront</mat-icon>
         Merch
     </a>
