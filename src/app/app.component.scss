@@ -30,13 +30,17 @@ a.home-button {
     padding: 0;
 }
 
-a.mat-button.active-link {
-    background-color: mat-color($mat-primary, 200);
+a.menu-item {
+    margin-right: 0.25rem;
+
+    &.active-link {
+        background-color: mat-color($mat-primary, 200);
+    }
 }
 
 @media screen and (max-width: 600px) {
     mat-toolbar {
-        a:not(:first-child,.home-button) {
+        a:not(:first-child, .home-button) {
             display: none;
         }
     }
