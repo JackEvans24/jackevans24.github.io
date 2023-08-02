@@ -1,17 +1,23 @@
 @import 'material.scss';
 
+$active-button-color: mat-color($mat-primary, 800);
+
 mat-sidenav-container {
     height: 100%;
     max-height: 100vh;
 
     mat-sidenav {
         padding: 1rem;
-        background-color: mat-color($mat-primary, 50);
+        background-color: $card-background;
 
         a.mat-button {
             display: block;
             text-align: left;
             margin: 0.25rem 0;
+        }
+
+        a.menu-item.active-link {
+            background-color: $active-button-color;
         }
     }
 }
@@ -30,13 +36,17 @@ a.home-button {
     padding: 0;
 }
 
-a.mat-button.active-link {
-    background-color: mat-color($mat-primary, 200);
+a.menu-item {
+    margin-right: 0.25rem;
+
+    &.active-link:not(:first-child, .home-button) {
+        background-color: $active-button-color;
+    }
 }
 
 @media screen and (max-width: 600px) {
     mat-toolbar {
-        a:not(:first-child,.home-button) {
+        a:not(:first-child, .home-button) {
             display: none;
         }
     }

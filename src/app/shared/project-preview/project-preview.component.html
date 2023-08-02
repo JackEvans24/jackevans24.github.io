@@ -2,17 +2,38 @@
     <h2 class="mt-1">{{ project.title }}</h2>
     <span>{{ project.description }}</span>
 
-    <img *ngIf="project.imageUrl" class="my-2" [src]="project.imageUrl">
-    <mat-card-content *ngIf="project.component" [innerHtml]="project.component"></mat-card-content>
+    <img *ngIf="project.imageUrl"
+         class="my-2"
+         [src]="project.imageUrl">
+    <mat-card-content *ngIf="project.component"
+                      [innerHtml]="project.component"></mat-card-content>
 
     <div class="button-container">
-        <a *ngIf="project.githubLink" mat-flat-button color="primary" target="_blank" [href]="project.githubLink">
-            <img class="logo" src="assets/images/logos/github-logo.png">
+        <a *ngIf="project.url"
+           mat-flat-button
+           color="primary"
+           target="_blank"
+           [href]="project.url">
+            Link
+        </a>
+
+        <a *ngIf="project.githubLink"
+           mat-flat-button
+           color="primary"
+           target="_blank"
+           [href]="project.githubLink">
+            <img class="logo"
+                 src="assets/images/logos/github-logo.png">
             Github Link
         </a>
 
-        <a *ngIf="project.youtubeId" mat-flat-button color="primary" target="_blank" [href]="'https://www.youtube.com/watch?v=' + project.youtubeId">
-            <img class="logo" src="assets/images/logos/youtube-logo.png">
+        <a *ngIf="project.youtubeId"
+           mat-flat-button
+           color="primary"
+           target="_blank"
+           [href]="'https://www.youtube.com/watch?v=' + project.youtubeId">
+            <img class="logo"
+                 src="assets/images/logos/youtube-logo.png">
             Project Video
         </a>
     </div>

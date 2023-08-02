@@ -5,17 +5,16 @@
 @import 'material-palettes';
 
 // Custom typography rules
-$my-custom-typography-config: mat-typography-config(
-    $font-family: 'Open Sans',
-    $display-4:  mat-typography-level('93px', $letter-spacing: -1.5px, $font-family: 'Comfortaa'),
-    $display-3:  mat-typography-level('58px', $letter-spacing: -0.5px, $font-family: 'Comfortaa'),
-    $display-2:  mat-typography-level('46px', $font-family: 'Comfortaa'),
-    $display-1:  mat-typography-level('33px', $letter-spacing: 0.25px, $font-family: 'Comfortaa'),
-    $headline:  mat-typography-level('23px', $font-family: 'Comfortaa'),
-    $title:  mat-typography-level('19px', $letter-spacing: 0.15px, $font-family: 'Comfortaa'),
-    $subheading-2:  mat-typography-level('15px', $letter-spacing: 0.15px, $font-family: 'Comfortaa'),
-    $subheading-1:  mat-typography-level('13px', $letter-spacing: 0.1px, $font-family: 'Comfortaa'),
-);
+$my-custom-typography-config: mat-typography-config($font-family: 'Open Sans',
+    $display-4: mat-typography-level('93px', $letter-spacing: -1.5px, $font-family: 'Comfortaa'),
+    $display-3: mat-typography-level('58px', $letter-spacing: -0.5px, $font-family: 'Comfortaa'),
+    $display-2: mat-typography-level('46px', $font-family: 'Comfortaa'),
+    $display-1: mat-typography-level('33px', $letter-spacing: 0.25px, $font-family: 'Comfortaa'),
+    $headline: mat-typography-level('23px', $font-family: 'Comfortaa'),
+    $title: mat-typography-level('19px', $letter-spacing: 0.15px, $font-family: 'Comfortaa'),
+    $subheading-2: mat-typography-level('15px', $letter-spacing: 0.15px, $font-family: 'Comfortaa'),
+    $subheading-1: mat-typography-level('13px', $letter-spacing: 0.1px, $font-family: 'Comfortaa'),
+  );
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
@@ -35,20 +34,17 @@ $jevans-space-warn: mat-palette($mat-red);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$jevans-space-theme: mat-light-theme((
-  color: (
-    primary: $jevans-space-primary,
-    accent: $jevans-space-primary,
-    warn: $jevans-space-warn,
-  )
-));
+$jevans-space-theme: mat-dark-theme((color: (primary: $jevans-space-primary,
+        accent: $jevans-space-primary,
+        warn: $jevans-space-warn,
+      )));
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($jevans-space-theme);
 
-// Custom styling
-.mat-dialog-container {
-  background-color: mat-color($mat-primary, 50);
-}
+$card-background: #404040;
+$card-background-hover: #444444;
+$card-shadow: 0px 0px 6px 2px #20202088;
+$card-shadow-hover: 0px 0px 6px 2px mat-color($mat-primary, 900);
