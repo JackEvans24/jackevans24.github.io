@@ -18,6 +18,8 @@ jobs:
           node-version: 20
       - name: Install Deps
         run: npm install
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli
       - name: Build
         run: npm ci && npm run build
       - name: Deploy
