@@ -24,7 +24,11 @@
 <ng-template #menuItems>
     <a mat-button
        class="menu-item home-button"
-       routerLink="/">Jevans' Space</a>
+       routerLink="/"
+       routerLinkActive="active-link"
+       [routerLinkActiveOptions]="{exact : true}">
+        Jevans' Space
+    </a>
 
     <a mat-button
        class="menu-item"
@@ -49,4 +53,12 @@
         <mat-icon>storefront</mat-icon>
         Merch
     </a> -->
+
+    <a mat-button
+       class="menu-item"
+       href="https://griddle.jevans.uk"
+       target="_blank">
+        <mat-icon>open_in_new</mat-icon>
+        Griddle
+    </a>
 </ng-template>
