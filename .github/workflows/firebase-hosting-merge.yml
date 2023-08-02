@@ -16,8 +16,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Install Deps
-        run: npm install
       - name: Install Angular CLI
         run: npm install -g @angular/cli
       - name: Install Deps
