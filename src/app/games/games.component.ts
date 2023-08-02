@@ -5,8 +5,8 @@ import { IGame } from '../models/game';
 import { GamesService } from './services/games.service';
 
 @Component({
-  selector: 'app-games',
-  templateUrl: './games.component.html'
+    selector: 'app-games',
+    templateUrl: './games.component.html'
 })
 export class GamesComponent implements OnInit {
     public compactView = false;
@@ -18,7 +18,7 @@ export class GamesComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      this.service.getApps().subscribe(games => this.games = games);
+        this.service.getApps().subscribe(games => this.games = games);
     }
 
     @HostListener('window:resize', ['$event'])
@@ -31,7 +31,8 @@ export class GamesComponent implements OnInit {
     }
 
     getSafeEmbedUrl(game: IGame): SafeUrl {
-        return this.sanitiser.bypassSecurityTrustResourceUrl('https://itch.io/embed/' + game.embedId);
+        const url = 'https://itch.io/embed/' + game.embedId + '?bg_color=404040&fg_color=fff&link_color=4a9e33&border_color=444';
+        return this.sanitiser.bypassSecurityTrustResourceUrl(url);
     }
 
     getSafeGameUrl(game: IGame): SafeUrl {
