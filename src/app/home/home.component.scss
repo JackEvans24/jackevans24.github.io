@@ -1,24 +1,59 @@
+@import 'material.scss';
+
 div.shrug {
     text-align: center;
 
     img {
-        max-height: 10rem;
+        max-height: 8rem;
         max-width: 100%;
         object-fit: fill;
     }
 }
 
+.home-content {
+    background-color: $card-background;
+    border: 2px solid $card-background;
+    border-radius: 10px;
+    box-shadow: $card-shadow;
+    color: white;
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0.5rem auto;
+    padding: 1rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    width: 500px;
+
+    &.interactable:hover {
+        background-color: $card-background-hover;
+        border: 2px solid mat-color($mat-primary, 800);
+        box-shadow: $card-shadow-hover;
+    }
+
+    @media screen and (max-width: 600px) {
+        margin: 0.5rem 0;
+        width: 90%;
+    }
+}
+
 div.platforms {
+    align-items: center;
     display: flex;
     flex-flow: row wrap;
+    height: 50px;
     justify-content: center;
-    margin-bottom: 2rem;
 
     a {
-        margin: 0 0.5rem;
+        padding: 0 0.5rem;
+        height: 36px;
+        transition: all 0.2s;
+
+        &:hover {
+            height: 50px;
+        }
     }
 
     img {
-        height: 36px;
+        height: 100%;
     }
 }
