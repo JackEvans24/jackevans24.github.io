@@ -1,0 +1,22 @@
+@import 'material.scss';
+
+.mat-subheading-1 {
+    margin-bottom: 0.5rem;
+    text-align: start;
+}
+
+ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: start;
+    margin-block: 0;
+    padding-inline: 0;
+
+    li {
+        background-color: $card-background-contrast;
+        border-radius: 0.5rem;
+        display: inline-block;
+        margin: 0.25rem;
+        padding: 0.5rem;
+    }
+}
