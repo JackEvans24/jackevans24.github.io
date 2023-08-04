@@ -41,8 +41,9 @@ export class HomeComponent {
 
     public gameDev = [
         'Unity',
-        'Blender',
+        'Photon',
         'ShaderLab',
+        'Blender',
         'GIMP',
         'Procreate',
         'Audacity',
