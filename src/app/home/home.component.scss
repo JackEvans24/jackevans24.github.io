@@ -24,15 +24,35 @@ div.shrug {
     transition: all 0.2s;
     width: 500px;
 
-    &.interactable:hover {
-        background-color: $card-background-hover;
-        border: 2px solid mat-color($mat-primary, 800);
-        box-shadow: $card-shadow-hover;
+    &.interactable {
+        border: 2px solid $primary-green;
+        box-shadow: inset 0 0 8px 0px $primary-green;
+
+        &:hover {
+            background-color: $card-background-hover;
+            box-shadow: inset 0 0 16px 4px $primary-green;
+            text-shadow: 0 0 5px $primary-green;
+        }
     }
 
     @media screen and (max-width: 600px) {
         margin: 0.5rem 0;
         width: 90%;
+    }
+}
+
+.about-me {
+    div:not(:first-child) {
+        text-align: justify;
+
+        &:not(:last-child) {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    a {
+        color: $primary-green;
+        font-weight: bold;
     }
 }
 
@@ -55,5 +75,32 @@ div.platforms {
 
     img {
         height: 100%;
+    }
+}
+
+.tech {
+    padding: 0;
+    width: calc(500px + 2rem);
+
+    @media screen and (max-width: 600px) {
+        margin: 0.5rem 0;
+        width: calc(90% + 2rem);
+    }
+
+    .mat-expansion-panel {
+        background: transparent;
+        box-shadow: none;
+
+        mat-panel-title {
+            justify-content: center;
+        }
+    }
+
+    app-inline-list {
+        display: block;
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
     }
 }

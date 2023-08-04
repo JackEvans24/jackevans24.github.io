@@ -1,85 +1,112 @@
 <div class="flex-col ta-c mx-2">
-    <div class="mat-display-3 mt-4 mb-2">Jevans' Space</div>
+   <!-- <div class="mat-display-3 mt-4 mb-2">Jack Evans</div> -->
 
-    <div class="shrug mb-2 px-2">
-        <img src="assets/images/jevans-shrug-transparent.png"
-             alt="Shrug emoticon">
-    </div>
+   <div class="shrug mt-2 px-2">
+      <img src="assets/images/jevans-shrug-transparent.png"
+           alt="Shrug emoticon">
+   </div>
 
-    <a class="home-content mat-title interactable"
-       href="/games">
-        You can click here to view my itch.io games
-    </a>
+   <div class="home-content about-me">
+      <div class="mat-title">Who is Jevans?</div>
+      <div>
+         Hi, I'm Jack, a software engineer and video games enthusiast who has been working in software since 2017 and developing games since
+         2020.
+      </div>
+      <div>
+         I am proficient working with C#, JavaScript, and TypeScript from years working as a full stack developer.
+         I have also used many other tools and languages during my career - you can find a full list below.
+      </div>
+      <div>
+         On this site you can find a fairly comprehensive list of
+         <a href="/games">the games I've created</a>, as well as
+         <a href="/projects">other projects I've worked on</a>.
+      </div>
+   </div>
 
-    <a class="home-content mat-title interactable"
-       href="/projects">
-        You can click here to view some of my other projects
-    </a>
+   <div class="home-content tech">
+      <mat-expansion-panel>
+         <mat-expansion-panel-header>
+            <mat-panel-title class="mat-title mb-0">
+               Technical Skills
+            </mat-panel-title>
+         </mat-expansion-panel-header>
 
-    <a class="home-content mat-title interactable"
-       href="assets/documents/jack-evans-cv.pdf"
-       target="_blank">
-        You can click here to download my CV
-    </a>
+         <app-inline-list header="Languages"
+                          [listItems]="languages"></app-inline-list>
+         <app-inline-list class="mb-2"
+                          header="Frameworks"
+                          [listItems]="frameworks"></app-inline-list>
+         <app-inline-list header="Software Tools"
+                          [listItems]="software"></app-inline-list>
+         <app-inline-list header="Game Development Tools"
+                          [listItems]="gameDev"></app-inline-list>
+      </mat-expansion-panel>
+   </div>
 
-    <div class="home-content">
-        <div class="mat-title">You can find me on any of these platforms</div>
-        <div class="platforms">
-            <a href="https://github.com/JackEvans24/"
-               target="_blank"
-               matTooltip="GitHub">
-                <img src="assets/images/logos/github-logo.png"
-                     alt="GitHub logo">
-            </a>
+   <a class="home-content mat-title interactable"
+      href="assets/documents/jack-evans-cv.pdf"
+      target="_blank">
+      Click here to download my CV
+   </a>
 
-            <a href="https://jevansmassive.itch.io/"
-               target="_blank"
-               matTooltip="itch.io">
-                <img src="assets/images/logos/itch-logo.png"
-                     alt="itch.io logo">
-            </a>
+   <div class="home-content">
+      <div class="mat-title">You can find me on these platforms</div>
+      <div class="platforms">
+         <a href="https://github.com/JackEvans24/"
+            target="_blank"
+            matTooltip="GitHub">
+            <img src="assets/images/logos/github-logo.png"
+                 alt="GitHub logo">
+         </a>
 
-            <a href="https://www.linkedin.com/in/jack-evans-7b6130bb/"
-               target="_blank"
-               matTooltip="LinkedIn">
-                <img src="assets/images/logos/linkedin-logo.png"
-                     alt="LinkedIn logo">
-            </a>
+         <a href="https://jevansmassive.itch.io/"
+            target="_blank"
+            matTooltip="itch.io">
+            <img src="assets/images/logos/itch-logo.png"
+                 alt="itch.io logo">
+         </a>
 
-            <!-- <a href="https://www.redbubble.com/people/Jevansmassive/explore/"
+         <a href="https://www.linkedin.com/in/jack-evans-7b6130bb/"
+            target="_blank"
+            matTooltip="LinkedIn">
+            <img src="assets/images/logos/linkedin-logo.png"
+                 alt="LinkedIn logo">
+         </a>
+
+         <!-- <a href="https://www.redbubble.com/people/Jevansmassive/explore/"
                target="_blank"
                matTooltip="Redbubble">
                 <img src="assets/images/logos/redbubble-logo.png"
                      alt="Redbubble logo">
             </a> -->
 
-            <a href="https://open.spotify.com/user/kizbjf08z7d5hz40z4fugw2qw"
-               target="_blank"
-               matTooltip="Spotify">
-                <img src="assets/images/logos/spotify-logo.png"
-                     alt="Spotify logo">
-            </a>
+         <!-- <a href="https://open.spotify.com/user/kizbjf08z7d5hz40z4fugw2qw"
+            target="_blank"
+            matTooltip="Spotify">
+            <img src="assets/images/logos/spotify-logo.png"
+                 alt="Spotify logo">
+         </a> -->
 
-            <!-- <a href="https://letterboxd.com/Jevansmassive/"
+         <!-- <a href="https://letterboxd.com/Jevansmassive/"
                target="_blank"
                matTooltip="Letterboxd">
                 <img src="assets/images/logos/letterboxd-logo.svg"
                      alt="Letterboxd logo">
             </a> -->
 
-            <a href="https://steamcommunity.com/id/jevansmassive/"
-               target="_blank"
-               matTooltip="Steam">
-                <img src="assets/images/logos/steam-logo.png"
-                     alt="Steam logo">
-            </a>
+         <a href="https://steamcommunity.com/id/jevansmassive/"
+            target="_blank"
+            matTooltip="Steam">
+            <img src="assets/images/logos/steam-logo.png"
+                 alt="Steam logo">
+         </a>
 
-            <!-- <a href="https://twitter.com/Jevans_Games"
+         <!-- <a href="https://twitter.com/Jevans_Games"
                target="_blank"
                matTooltip="Twitter">
                 <img src="assets/images/logos/twitter-logo.png"
                      alt="Twitter logo">
             </a> -->
-        </div>
-    </div>
+      </div>
+   </div>
 </div>
