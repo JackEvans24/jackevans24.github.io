@@ -56,7 +56,7 @@ div.shrug {
     }
 
     a {
-        color: $primary-green;
+        color: mat-color($mat-primary, 300);
         font-weight: bold;
     }
 }
