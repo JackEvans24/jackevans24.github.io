@@ -13,10 +13,19 @@ ul {
     padding-inline: 0;
 
     li {
+        align-items: center;
         background-color: $card-background-contrast;
         border-radius: 0.5rem;
-        display: inline-block;
+        display: flex;
         margin: 0.25rem;
         padding: 0.5rem;
+
+        .mat-icon {
+            color: $contrast-green;
+            font-size: 14px;
+            height: 14px;
+            margin-right: 0.25rem;
+            width: 14px;
+        }
     }
 }

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { IListItem } from './inline-list-item';
 
 @Component({
   selector: 'app-inline-list',
@@ -7,7 +8,7 @@ import { Component, Input } from '@angular/core';
 })
 export class InlineListComponent {
   @Input() header = 'Title';
-  @Input() listItems: string[] = [];
+  @Input() listItems: IListItem[] = [];
 
   constructor() { }
 }
