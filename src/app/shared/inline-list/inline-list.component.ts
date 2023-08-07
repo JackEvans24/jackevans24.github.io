@@ -7,8 +7,9 @@ import { IListItem } from './inline-list-item';
   styleUrls: ['./inline-list.component.scss']
 })
 export class InlineListComponent {
-  @Input() header = 'Title';
+  @Input() header = '';
   @Input() listItems: IListItem[] = [];
+  @Input() align = 'start';
 
   constructor() { }
 }
