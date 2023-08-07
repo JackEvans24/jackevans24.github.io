@@ -7,5 +7,5 @@ export const randomTvShow: IProject = {
     githubLink: 'https://github.com/JackEvans24/random-tv-show',
     imageUrl: 'assets/images/random-tv-show.png',
     // tslint:disable-next-line:no-bitwise
-    tags: Tags.CSharp & Tags.WinForms
+    tags: Tags.CSharp | Tags.WinForms
 };

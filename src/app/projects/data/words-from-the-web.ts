@@ -7,5 +7,5 @@ export const wordsFromTheWeb: IProject = {
     githubLink: 'https://github.com/JackEvans24/words-from-the-world-wide-web',
     imageUrl: 'assets/images/words-from-the-web.png',
     // tslint:disable-next-line:no-bitwise
-    tags: Tags.CSharp & Tags.WinForms
+    tags: Tags.CSharp | Tags.WinForms
 };
