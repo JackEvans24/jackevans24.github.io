@@ -4,4 +4,5 @@ export enum Tags {
     Javascript = 4,
     WinForms = 8,
     Powershell = 16,
+    Firebase = 32
 }

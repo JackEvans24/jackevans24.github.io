@@ -7,5 +7,5 @@ export const griddle: IProject = {
     url: 'https://griddle.jevans.uk',
     imageUrl: 'assets/images/griddle.png',
     // tslint:disable-next-line:no-bitwise
-    tags: Tags.Javascript
+    tags: Tags.Javascript | Tags.Firebase
 };
