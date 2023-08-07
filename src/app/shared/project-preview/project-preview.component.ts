@@ -1,8 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 
-import { IProject } from 'src/app/models/project';
-
+import { IProject, getTagList } from 'src/app/models/project';
 
 @Component({
     selector: 'app-project-preview',
@@ -13,5 +11,5 @@ export class ProjectPreviewComponent {
     @Input()
     project!: IProject;
 
-    constructor(private dialog: MatDialog) {}
+    public tagList = getTagList;
 }
