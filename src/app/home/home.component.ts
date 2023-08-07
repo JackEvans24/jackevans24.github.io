@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-home',
@@ -7,46 +7,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent {
     public languages = [
-        'C#',
-        'JavaScript',
-        'TypeScript',
-        'SQL',
-        'HTML',
-        'CSS/SCSS',
-        'Python',
-        'HLSL',
-        'Bash'
+        { text: 'C#', icon: 'star' },
+        { text: 'TypeScript', icon: 'star' },
+        { text: 'JavaScript' },
+        { text: 'SQL' },
+        { text: 'HTML' },
+        { text: 'CSS/SCSS' },
+        { text: 'Python' },
+        { text: 'HLSL' },
+        { text: 'Bash' }
     ];
 
     public frameworks = [
-        '.NET',
-        '.NET Core',
-        'Entity Framework',
-        'Node',
-        'Angular',
-        'React',
-        'JQuery',
-        'Git'
+        { text: '.NET', icon: 'star' },
+        { text: '.NET Core', icon: 'star' },
+        { text: 'Entity Framework' },
+        { text: 'Node' },
+        { text: 'Angular', icon: 'star' },
+        { text: 'React' },
+        { text: 'JQuery' },
+        { text: 'Git' }
     ];
 
     public software = [
-        'Azure DevOps',
-        'Azure Portal',
-        'Firebase',
-        'Postman',
-        'IIS',
-        'XCode',
-        'SQL Server Management Studio'
+        { text: 'Azure DevOps' },
+        { text: 'Azure Portal' },
+        { text: 'Firebase' },
+        { text: 'Postman' },
+        { text: 'IIS' },
+        { text: 'XCode' },
+        { text: 'SQL Server Management Studio' }
     ];
 
     public gameDev = [
-        'Unity',
-        'Photon',
-        'ShaderLab',
-        'Blender',
-        'GIMP',
-        'Procreate',
-        'Audacity',
-        'Bfxr'
+        { text: 'Unity', icon: 'star' },
+        { text: 'Photon' },
+        { text: 'ShaderLab' },
+        { text: 'Blender' },
+        { text: 'GIMP' },
+        { text: 'Procreate' },
+        { text: 'Audacity' },
+        { text: 'Bfxr' }
     ];
 }

@@ -1,12 +1,14 @@
 <div class="display-card">
     <h2 class="mt-1">{{ project.title }}</h2>
+
+    <app-inline-list [align]="'center'"
+                     [listItems]="tagList(project.tags)"></app-inline-list>
+
     <span>{{ project.description }}</span>
 
     <img *ngIf="project.imageUrl"
          class="my-2"
          [src]="project.imageUrl">
-    <mat-card-content *ngIf="project.component"
-                      [innerHtml]="project.component"></mat-card-content>
 
     <div class="button-container">
         <a *ngIf="project.url"

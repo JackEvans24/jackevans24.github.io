@@ -1,5 +1,8 @@
 <div *ngIf="(header || '').length"
      class="mat-subheading-1">{{ header }}</div>
-<ul>
-    <li *ngFor="let item of listItems">{{item}}</li>
+<ul [style.justify-content]="align">
+    <li *ngFor="let item of listItems">
+        <mat-icon *ngIf="(item.icon || '').length">{{item.icon}}</mat-icon>
+        {{ item.text }}
+    </li>
 </ul>
