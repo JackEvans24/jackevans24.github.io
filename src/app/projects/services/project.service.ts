@@ -13,6 +13,7 @@ import { lockScript } from '../data/lock-script';
 import { metroidvaniaTest } from '../data/metroidvania-test';
 import { mobieBrawl } from '../data/mobie-brawl';
 import { moodLamp } from '../data/mood-lamp';
+import { outOfTen } from '../data/out-of-ten';
 import { pinkGuy } from '../data/pink-guy';
 import { randomTvShow } from '../data/random-tv-show';
 import { wordsFromTheWeb } from '../data/words-from-the-web';
@@ -21,6 +22,7 @@ const apps: IProject[] = [
     griddle,
     randomTvShow,
     forcesOfNature,
+    outOfTen,
     dropball,
     fileChange,
     metroidvaniaTest,
