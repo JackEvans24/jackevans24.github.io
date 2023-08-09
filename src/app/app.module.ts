@@ -9,12 +9,14 @@ import { HomeComponent } from './home/home.component';
 import { MerchComponent } from './merch/merch.component';
 import { ProjectsModule } from './projects/projects.module';
 import { SharedModule } from './shared/shared.module';
+import { ArtComponent } from './art/art.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    MerchComponent
+    MerchComponent,
+    ArtComponent
   ],
   imports: [
     BrowserModule,

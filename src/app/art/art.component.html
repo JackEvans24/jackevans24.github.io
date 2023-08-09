@@ -1,0 +1,21 @@
+<div class="mx-2 ta-c">
+    <div class="mat-display-3 mt-4 mb-2">Technical Art</div>
+
+    <div class="mat-title">I love messing with shaders</div>
+    <div class="mat-subheading-2 mb-4">I been messing with shaders, and you can too with inline shader editing FUCK</div>
+
+    <div id="shader-button-container"
+         class="mb-2">
+        <button *ngFor="let shader of shaders"
+                mat-flat-button
+                [routerLink]="'/art/' + shader.url"
+                routerLinkActive="mat-primary">{{shader.name}}</button>
+    </div>
+
+    <div *ngIf="currentShader; else noShader">{{currentShader.code}}</div>
+
+    <ng-template #noShader>
+        <div *ngIf="!currentShader"
+             class="mat-subheading-2">Select one of the shaders above to get started!</div>
+    </ng-template>
+</div>
