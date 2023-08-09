@@ -29,8 +29,9 @@
         flex-grow: 1;
 
         &.logo {
+            border-radius: 2px;
             height: 18px;
-            padding-right: 0.5rem;
+            margin-right: 0.5rem;
         }
     }
 
