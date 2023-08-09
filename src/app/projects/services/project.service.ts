@@ -7,6 +7,7 @@ import { cubeGame } from '../data/cube-game';
 import { diceSimulator } from '../data/dice-simulator';
 import { dropball } from '../data/dropball';
 import { fileChange } from '../data/file-change';
+import { forcesOfNature } from '../data/forces-of-nature';
 import { griddle } from '../data/griddle';
 import { lockScript } from '../data/lock-script';
 import { metroidvaniaTest } from '../data/metroidvania-test';
@@ -19,6 +20,7 @@ import { wordsFromTheWeb } from '../data/words-from-the-web';
 const apps: IProject[] = [
     griddle,
     randomTvShow,
+    forcesOfNature,
     dropball,
     fileChange,
     metroidvaniaTest,
