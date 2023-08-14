@@ -8,13 +8,13 @@
          class="mb-4">
         <button *ngFor="let shader of shaders"
                 mat-flat-button
-                class="mr-1"
+                class="mr-1 mb-1"
                 [routerLink]="'/art/' + shader.url"
                 routerLinkActive="mat-primary">{{shader.name}}</button>
     </div>
 
     <div *ngIf="currentShaderUrl; else noShader">
-        <iframe width="640"
+        <iframe [width]="compactView ? '360' : '640'"
                 height="360"
                 frameborder="0"
                 [src]="currentShaderUrl"
