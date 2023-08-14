@@ -1,0 +1,27 @@
+<div class="mx-2 ta-c">
+    <div class="mat-display-3 mt-4 mb-2">Technical Art</div>
+
+    <div class="mat-title">I love messing with shaders</div>
+    <div class="mat-subheading-2 mb-4">You can view the GLSL code for these guys using the ShaderToy link in the embedded viewer</div>
+
+    <div id="shader-button-container"
+         class="mb-4">
+        <button *ngFor="let shader of shaders"
+                mat-flat-button
+                class="mr-1 mb-1"
+                [routerLink]="'/art/' + shader.url"
+                routerLinkActive="mat-primary">{{shader.name}}</button>
+    </div>
+
+    <div *ngIf="currentShaderUrl; else noShader">
+        <iframe [width]="compactView ? '360' : '640'"
+                height="360"
+                frameborder="0"
+                [src]="currentShaderUrl"
+                allowfullscreen></iframe>
+    </div>
+
+    <ng-template #noShader>
+        <div class="mat-subheading-2">Select one of the shaders above!</div>
+    </ng-template>
+</div>
