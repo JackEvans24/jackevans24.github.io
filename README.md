@@ -1,3 +1,3 @@
-# <a href="https://jackevans24.github.io/" target="_blank">JackEvans24.github.io</a>
+# <a href="https://jevans.uk/" target="_blank">Jevans' Space</a>
 
-Code base for my github pages site
+Code base for my portfolio website
