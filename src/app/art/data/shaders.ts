@@ -5,5 +5,6 @@ export interface IShader {
 }
 
 export const shaders: IShader[] = [
-    { name: 'Cellular Noise', url: 'cellular-noise', embedUrl: 'Dt2yWz' }
+    { name: 'Cellular Noise', url: 'cellular-noise', embedUrl: 'Dt2yWz' },
+    { name: 'Voronoi', url: 'voronoi', embedUrl: 'cl2yRK' },
 ];
