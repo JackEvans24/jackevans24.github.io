@@ -8,6 +8,7 @@
          class="mb-4">
         <button *ngFor="let shader of shaders"
                 mat-flat-button
+                class="mr-1"
                 [routerLink]="'/art/' + shader.url"
                 routerLinkActive="mat-primary">{{shader.name}}</button>
     </div>
