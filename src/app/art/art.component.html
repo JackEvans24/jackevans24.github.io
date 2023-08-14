@@ -5,17 +5,22 @@
     <div class="mat-subheading-2 mb-4">I been messing with shaders, and you can too with inline shader editing FUCK</div>
 
     <div id="shader-button-container"
-         class="mb-2">
+         class="mb-4">
         <button *ngFor="let shader of shaders"
                 mat-flat-button
                 [routerLink]="'/art/' + shader.url"
                 routerLinkActive="mat-primary">{{shader.name}}</button>
     </div>
 
-    <div *ngIf="currentShader; else noShader">{{currentShader.code}}</div>
+    <div *ngIf="currentShaderUrl; else noShader">
+        <iframe width="640"
+                height="360"
+                frameborder="0"
+                [src]="currentShaderUrl"
+                allowfullscreen></iframe>
+    </div>
 
     <ng-template #noShader>
-        <div *ngIf="!currentShader"
-             class="mat-subheading-2">Select one of the shaders above to get started!</div>
+        <div class="mat-subheading-2">Select one of the shaders above to get started!</div>
     </ng-template>
 </div>
