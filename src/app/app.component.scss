@@ -1,6 +1,7 @@
+@use '~@angular/material' as mat;
 @import 'material.scss';
 
-$active-button-color: mat-color($mat-primary, 800);
+$active-button-color: mat.get-color-from-palette($mat-primary, 800);
 
 mat-sidenav-container {
     height: 100%;
