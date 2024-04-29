@@ -7,14 +7,14 @@
 
 // Custom typography rules
 $my-custom-typography-config: mat.define-legacy-typography-config($font-family: 'Open Sans',
-    $display-4: mat.define-typography-level('93px', $letter-spacing: -1.5px, $font-family: 'Comfortaa'),
-    $display-3: mat.define-typography-level('58px', $letter-spacing: -0.5px, $font-family: 'Comfortaa'),
-    $display-2: mat.define-typography-level('46px', $font-family: 'Comfortaa'),
-    $display-1: mat.define-typography-level('33px', $letter-spacing: 0.25px, $font-family: 'Comfortaa'),
-    $headline: mat.define-typography-level('23px', $font-family: 'Comfortaa'),
-    $title: mat.define-typography-level('19px', $letter-spacing: 0.15px, $font-family: 'Comfortaa'),
-    $subheading-2: mat.define-typography-level('15px', $letter-spacing: 0.15px, $font-family: 'Comfortaa'),
-    $subheading-1: mat.define-typography-level('13px', $letter-spacing: 0.1px, $font-family: 'Comfortaa'),
+    $display-4: mat.define-typography-level(93px, $letter-spacing: -1.5px, $font-family: 'Comfortaa'),
+    $display-3: mat.define-typography-level(58px, $letter-spacing: -0.5px, $font-family: 'Comfortaa'),
+    $display-2: mat.define-typography-level(46px, $font-family: 'Comfortaa'),
+    $display-1: mat.define-typography-level(33px, $letter-spacing: 0.25px, $font-family: 'Comfortaa'),
+    $headline: mat.define-typography-level(23px, $font-family: 'Comfortaa'),
+    $title: mat.define-typography-level(19px, $letter-spacing: 0.15px, $font-family: 'Comfortaa'),
+    $subheading-2: mat.define-typography-level(15px, $letter-spacing: 0.15px, $font-family: 'Comfortaa'),
+    $subheading-1: mat.define-typography-level(13px, $letter-spacing: 0.1px, $font-family: 'Comfortaa'),
   );
 
 // Include the common styles for Angular Material. We include this here so that you only
