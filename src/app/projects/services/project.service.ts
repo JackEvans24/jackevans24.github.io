@@ -17,14 +17,16 @@ import { outOfTen } from '../data/out-of-ten';
 import { pinkGuy } from '../data/pink-guy';
 import { randomTvShow } from '../data/random-tv-show';
 import { wordsFromTheWeb } from '../data/words-from-the-web';
+import { proceduralSound } from '../data/procedural-sound';
 
 const apps: IProject[] = [
     griddle,
     randomTvShow,
     forcesOfNature,
     outOfTen,
-    dropball,
+    proceduralSound,
     fileChange,
+    dropball,
     metroidvaniaTest,
     moodLamp,
     mobieBrawl,
