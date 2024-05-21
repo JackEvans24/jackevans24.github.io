@@ -4,17 +4,21 @@ import { Observable, of } from 'rxjs';
 import { IGame } from 'src/app/models/game';
 
 import { fingerguns } from '../data/fingerguns';
+import { diceScravenger } from '../data/dice-scravenger';
 import { graveyardPrince } from '../data/graveyard-prince';
+import { perfectPlunge } from '../data/perfect-plunge';
 import { scuttlebugDerby } from '../data/scuttlebug-derby';
 import { stopTheTribe } from '../data/stop-the-tribe';
 import { theRinging } from '../data/the-ringing';
 
 const games: IGame[] = [
-    graveyardPrince,
-    scuttlebugDerby,
+    perfectPlunge,
+    theRinging,
     fingerguns,
+    scuttlebugDerby,
+    graveyardPrince,
     stopTheTribe,
-    theRinging
+    diceScravenger
 ];
 
 @Injectable({
