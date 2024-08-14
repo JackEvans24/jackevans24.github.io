@@ -10,13 +10,15 @@ import { MerchComponent } from './merch/merch.component';
 import { ProjectsModule } from './projects/projects.module';
 import { SharedModule } from './shared/shared.module';
 import { ArtComponent } from './art/art.component';
+import { SpotifyCodeComponent } from './app/spotify-code/spotify-code.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     MerchComponent,
-    ArtComponent
+    ArtComponent,
+    SpotifyCodeComponent
   ],
   imports: [
     BrowserModule,

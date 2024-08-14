@@ -6,6 +6,7 @@ import { GamesComponent } from './games/games.component';
 import { HomeComponent } from './home/home.component';
 import { MerchComponent } from './merch/merch.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { SpotifyCodeComponent } from './app/spotify-code/spotify-code.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
         path: 'art/:shaderType',
         component: ArtComponent,
     },
+    { path: 'spotify-code', component: SpotifyCodeComponent }
 ];
 
 @NgModule({

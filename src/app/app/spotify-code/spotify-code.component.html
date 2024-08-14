@@ -1,0 +1,21 @@
+<div class="mx-2 ta-c">
+    <div class="mat-display-3 mt-4 mb-2">Spotify access code</div>
+
+    <ng-container *ngIf="code; else noCode">
+        <div>
+            <input class="code-input mat-title"
+                   readonly
+                   value="{{code}}">
+        </div>
+        <div>
+            <button mat-flat-button
+                    [disabled]="codeCopied"
+                    color="primary"
+                    (click)="copyInputMessage()">{{ codeCopied ? 'Copied!' : 'Copy' }}</button>
+        </div>
+    </ng-container>
+
+    <ng-template #noCode>
+        <div class="mat-title">No code found :(</div>
+    </ng-template>
+</div>
