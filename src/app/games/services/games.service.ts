@@ -10,10 +10,12 @@ import { perfectPlunge } from '../data/perfect-plunge';
 import { scuttlebugDerby } from '../data/scuttlebug-derby';
 import { stopTheTribe } from '../data/stop-the-tribe';
 import { theRinging } from '../data/the-ringing';
+import { neonBounce } from '../data/neon-bounce';
 
 const games: IGame[] = [
     perfectPlunge,
     theRinging,
+    neonBounce,
     fingerguns,
     scuttlebugDerby,
     graveyardPrince,
